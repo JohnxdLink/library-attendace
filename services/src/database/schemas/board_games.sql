@@ -4,9 +4,9 @@ CREATE TABLE board_games (
     description VARCHAR(255) NULL,
     quantity INT UNSIGNED NOT NULL DEFAULT 1,
     status ENUM(
-        'available',
-        'unavailable'
-    ) NOT NULL DEFAULT 'available',
+        'Available',
+        'Unavailable'
+    ) NOT NULL DEFAULT 'Available',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
