@@ -1,0 +1,92 @@
+:root {
+  /* Colors */
+  --color-primary: #d5cc34;
+  --color-secondary: #051837;
+  --color-navy: #000080;
+  --color-accent: #adaf98;
+  --color-warning: #d3ab54;
+  --color-dark: #424243;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light: #f8f9fa;
+  --color-gray: #6c757d;
+  --color-light-gray: #c3c2c2;
+
+  --color-primary-50: #d5cc3480;
+  --color-secondary-50: #05183780;
+  --color-navy-50: #00008080;
+  --color-accent-50: #adaf9880;
+  --color-warning-50: #d3ab5480;
+  --color-dark-50: #42424380;
+  --color-black-50: #00000080;
+  --color-white-50: #ffffff80;
+
+  /* Font sizes */
+  --font-size-56: 56px;
+  --font-size-40: 40px;
+  --font-size-32: 32px;
+  --font-size-16: 16px;
+  --font-size-14: 14px;
+  --font-size-12: 12px;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Border widths */
+  --border-thin: 1px;
+  --border-medium: 2px;
+  --border-thick: 4px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal: 1300;
+  --z-tooltip: 1400;
+}
