@@ -1,0 +1,183 @@
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-md {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-3xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-4xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 9rem;
+  line-height: 1;
+}
+
+.text-56 {
+  font-size: var(--font-size-56);
+  line-height: var(--line-height-tight);
+}
+
+.text-40 {
+  font-size: var(--font-size-40);
+  line-height: var(--line-height-tight);
+}
+
+.text-32 {
+  font-size: var(--font-size-32);
+  line-height: var(--line-height-tight);
+}
+
+.text-16 {
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-normal);
+}
+
+.text-14 {
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-normal);
+}
+
+.text-12 {
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-normal);
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-extrabold {
+  font-weight: var(--font-weight-extrabold);
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-navy {
+  color: var(--color-navy);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-black {
+  color: var(--color-black);
+}
+
+.text-light {
+  color: var(--color-light);
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+.text-light-gray {
+  color: var(--color-light-gray);
+}
+
+.text-center {
+  text-align: center;
+}

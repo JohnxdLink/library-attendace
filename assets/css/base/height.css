@@ -1,0 +1,156 @@
+.h-auto {
+  height: auto;
+}
+
+/* Percentages */
+.h-0 {
+  height: 0;
+}
+
+.h-25 {
+  height: 25%;
+}
+
+.h-33 {
+  height: 33.333333%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-66 {
+  height: 66.666667%;
+}
+
+.h-75 {
+  height: 75%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+/* Viewport height */
+.h-screen {
+  height: 100vw;
+}
+
+/* Fit Content */
+.h-fit {
+  height: fit-content;
+}
+
+.h-min {
+  height: min-content;
+}
+
+.h-max {
+  height: max-content;
+}
+
+/* Fractional heights */
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-1\/3 {
+  height: 33.333333%;
+}
+
+.h-2\/3 {
+  height: 66.666667%;
+}
+
+.h-1\/4 {
+  height: 25%;
+}
+
+.h-2\/4 {
+  height: 50%;
+}
+
+.h-3\/4 {
+  height: 75%;
+}
+
+.h-1\/5 {
+  height: 20%;
+}
+
+.h-2\/5 {
+  height: 40%;
+}
+
+.h-3\/5 {
+  height: 60%;
+}
+
+.h-4\/5 {
+  height: 80%;
+}
+
+/* Pixel heights */
+.h-16 {
+  height: 1rem; /* 16px */
+}
+
+.h-24 {
+  height: 1.5rem; /* 24px */
+}
+
+.h-32 {
+  height: 2rem; /* 32px */
+}
+
+.h-48 {
+  height: 3rem; /* 48px */
+}
+
+.h-64 {
+  height: 4rem; /* 64px */
+}
+
+.h-80 {
+  height: 5rem; /* 80px */
+}
+
+.h-96 {
+  height: 6rem; /* 96px */
+}
+
+.h-128 {
+  height: 8rem; /* 128px */
+}
+
+.h-160 {
+  height: 10rem; /* 160px */
+}
+
+.h-192 {
+  height: 12rem; /* 192px */
+}
+
+.h-224 {
+  height: 14rem; /* 224px */
+}
+
+.h-256 {
+  height: 16rem; /* 256px */
+}
+
+.h-320 {
+  height: 20rem; /* 320px */
+}
+
+.h-384 {
+  height: 24rem; /* 384px */
+}
+
+.h-480 {
+  height: 30rem; /* 480px */
+}
+
+.h-512 {
+  height: 32rem; /* 512px */
+}

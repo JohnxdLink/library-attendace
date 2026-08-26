@@ -1,0 +1,27 @@
+.radius-none {
+  border-radius: 0;
+}
+
+.radius-sm {
+  border-radius: 0.25rem;
+}
+
+.radius-md {
+  border-radius: 0.5rem;
+}
+
+.radius-lg {
+  border-radius: 0.75rem;
+}
+
+.radius-xl {
+  border-radius: 1rem;
+}
+
+.radius-2xl {
+  border-radius: 1.5rem;
+}
+
+.radius-full {
+  border-radius: 9999px;
+}

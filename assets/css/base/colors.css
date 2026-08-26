@@ -1,0 +1,47 @@
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-navy {
+  background-color: var(--color-navy);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.bg-gray {
+  background-color: var(--color-gray);
+}
+
+.bg-light-gray {
+  background-color: var(--color-light-gray);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
