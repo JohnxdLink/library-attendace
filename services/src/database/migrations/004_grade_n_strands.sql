@@ -1,0 +1,12 @@
+CREATE TABLE grade_n_strands (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    grade_level VARCHAR(32) NOT NULL,
+    strand VARCHAR(64) NULL,
+    description VARCHAR(255) NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (id),
+
+    UNIQUE KEY uq_grade_n_strands (grade_level, strand)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,15 @@
+CREATE TABLE library_staff_duties (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    staff_id BIGINT UNSIGNED NOT NULL,
+    duty_date DATE NOT NULL,
+    time_in TIME NOT NULL,
+    time_out TIME NULL,
+    remarks VARCHAR(255) NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (id),
+
+    CONSTRAINT fk_library_staff_duties_staff FOREIGN KEY (staff_id) REFERENCES staffs(id) ON DELETE CASCADE
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
