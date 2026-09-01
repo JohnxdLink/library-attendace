@@ -95,7 +95,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  vertical-align: baseline;
+  vertical-align: middle;
 }
 /* HTML5 display-role reset for older browsers */
 

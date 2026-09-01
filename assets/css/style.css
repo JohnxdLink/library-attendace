@@ -16,3 +16,6 @@
 @import url("./base/position.css");
 @import url("./base/radius.css");
 @import url("./base/z-index.css");
+
+/* Landing page */
+@import url("./pages/landing.css");
