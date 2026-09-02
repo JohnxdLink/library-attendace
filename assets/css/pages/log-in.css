@@ -1,0 +1,353 @@
+/* TEACHER SIGN-IN PAGE  */
+
+/* PAGE */
+
+.login-page {
+  min-height: 100vh;
+
+  background-color: var(--color-light);
+
+  color: var(--color-dark);
+}
+
+/* MAIN */
+
+.sign-in-main {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: var(--space-64) var(--space-40);
+
+  box-sizing: border-box;
+}
+
+/* LOGIN WRAPPER */
+
+.sign-in-wrapper {
+  width: 100%;
+
+  max-width: 1050px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  border: var(--border-medium) solid var(--color-dark);
+
+  border-radius: var(--radius-xl);
+
+  overflow: hidden;
+
+  background-color: var(--color-white);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* LEFT INTRO */
+
+.sign-in-intro {
+  padding: var(--space-64);
+
+  background-color: var(--color-dark);
+
+  color: var(--color-white);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.sign-in-intro .portal-label {
+  margin-bottom: var(--space-16);
+}
+
+.sign-in-intro h1 {
+  margin: 0 0 var(--space-24);
+
+  font-size: clamp(44px, 5vw, 64px);
+
+  line-height: 1.05;
+}
+
+.sign-in-description {
+  max-width: 430px;
+
+  margin: 0 0 var(--space-32);
+
+  line-height: var(--line-height-relaxed);
+}
+
+.sign-in-intro .outline-button {
+  width: fit-content;
+
+  border-color: var(--color-white);
+
+  color: var(--color-white);
+}
+
+.sign-in-intro .outline-button:hover {
+  background-color: var(--color-white);
+
+  color: var(--color-dark);
+}
+
+/* RIGHT LOGIN CARD */
+
+.sign-in-card {
+  padding: var(--space-64);
+
+  background-color: var(--color-white);
+}
+
+.sign-in-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-16);
+
+  margin-bottom: var(--space-32);
+}
+
+.sign-in-icon {
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: var(--border-medium) solid var(--color-dark);
+
+  border-radius: var(--radius-full);
+
+  background-color: var(--color-light);
+
+  font-size: 25px;
+}
+
+.sign-in-label {
+  margin: 0;
+
+  font-size: var(--font-size-12);
+
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: 0.08em;
+}
+
+.sign-in-heading h2 {
+  margin: var(--space-4) 0 0;
+
+  font-size: var(--font-size-32);
+}
+
+/* FORM */
+
+.sign-in-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: var(--space-20);
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: var(--space-8);
+
+  font-size: var(--font-size-14);
+
+  font-weight: var(--font-weight-bold);
+}
+
+.form-group input {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding: var(--space-12) var(--space-16);
+
+  box-sizing: border-box;
+
+  border: var(--border-medium) solid var(--color-dark);
+
+  border-radius: var(--radius-md);
+
+  background-color: var(--color-white);
+
+  color: var(--color-dark);
+
+  font-size: var(--font-size-14);
+
+  outline: none;
+
+  transition: var(--transition-fast);
+}
+
+.form-group input:focus {
+  box-shadow: 4px 4px 0 var(--color-dark);
+
+  transform: translateY(-2px);
+}
+
+/* PASSWORD */
+
+.password-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.password-heading a {
+  font-size: var(--font-size-12);
+
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-primary);
+}
+
+.password-heading a:hover {
+  text-decoration: underline;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 50px;
+}
+
+.password-wrapper button {
+  position: absolute;
+
+  top: 50%;
+
+  right: 10px;
+
+  transform: translateY(-50%);
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 17px;
+}
+
+/* REMEMBER ACCOUNT */
+
+.remember-account {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-8);
+
+  margin-bottom: var(--space-24);
+
+  font-size: var(--font-size-14);
+
+  cursor: pointer;
+}
+
+.remember-account input {
+  width: 16px;
+
+  height: 16px;
+
+  cursor: pointer;
+}
+
+/* SIGN IN BUTTON */
+
+.sign-in-button {
+  width: 100%;
+
+  min-height: 50px;
+
+  border: var(--border-medium) solid var(--color-dark);
+
+  border-radius: var(--radius-xl);
+
+  background-color: var(--color-primary);
+
+  color: var(--color-white);
+
+  font-size: var(--font-size-16);
+
+  font-weight: var(--font-weight-bold);
+
+  cursor: pointer;
+
+  box-shadow: 4px 4px 0 var(--color-dark);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sign-in-button:hover {
+  transform: translate(3px, 3px);
+
+  box-shadow: 1px 1px 0 var(--color-dark);
+}
+
+/* MESSAGE */
+
+.sign-in-message {
+  min-height: 20px;
+
+  margin: var(--space-16) 0 0;
+
+  text-align: center;
+
+  font-size: var(--font-size-14);
+
+  font-weight: var(--font-weight-bold);
+}
+
+.sign-in-message.error {
+  color: var(--color-warning);
+}
+
+.sign-in-message.success {
+  color: var(--color-primary);
+}
+
+/* SECURITY NOTE */
+
+.security-note {
+  margin-top: var(--space-24);
+
+  padding: var(--space-12);
+
+  border: var(--border-thin) solid var(--color-light-gray);
+
+  border-radius: var(--radius-md);
+
+  background-color: var(--color-light);
+
+  font-size: var(--font-size-12);
+
+  line-height: var(--line-height-normal);
+
+  text-align: center;
+}
