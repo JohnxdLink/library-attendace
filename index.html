@@ -2,250 +2,197 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Library Attendance Monitoring System</title>
 
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-  <body class="landing-page bg-light">
-    <!-- NAVIGATION BAR  -->
+  <body class="bg-light text-dark">
+    <!--  NAVIGATION  -->
+    <header class="bg-dark border-b border-dark position-sticky">
+      <nav class="d-flex items-center justify-between px-10 py-4">
+        <a href="#home" class="d-flex items-center gap-3 text-white font-bold text-lg">
+          <img class="h-48 w-48" src="./assets/images/logo/britech-logo.png" alt="Britech College Logo" />
 
-    <header class="landing-navbar">
-      <nav class="d-flex items-center justify-between px-10 py-0">
-        <!-- LOGO -->
+          <span class="text-white"> Britech College </span>
+        </a>
 
-        <div class="d-flex items-center gap-5">
-          <a href="#home" class="logo d-flex items-center">
-            <img
-              class="d-flex items-center h-25 w-25"
-              src="./assets/images/logo/britech-logo.png"
-              alt="Britech College Logo"
-            />
-          </a>
+        <div class="d-flex items-center gap-2 flex-wrap">
+          <a href="#home" class="px-3 py-2 rounded-md text-white"> HOME </a>
 
-          <!-- NAVIGATION LINKS -->
+          <a href="#dashboard" class="px-3 py-2 rounded-md text-white"> DASHBOARD </a>
 
-          <div class="d-flex items-center gap-2">
-            <a href="#home" class="nav-link"> HOME </a>
+          <a href="#services" class="px-3 py-2 rounded-md text-white"> SERVICES </a>
 
-            <a href="#dashboard" class="nav-link"> DASHBOARD </a>
+          <a href="#features" class="px-3 py-2 rounded-md text-white"> FEATURES </a>
 
-            <a href="#services" class="nav-link"> SERVICES </a>
+          <a href="#about" class="px-3 py-2 rounded-md text-white"> ABOUT </a>
 
-            <a href="#features" class="nav-link"> FEATURES </a>
-
-            <a href="#about" class="nav-link"> ABOUT US </a>
-
-            <a href="#contact" class="nav-link"> CONTACT </a>
-          </div>
-        </div>
-
-        <!-- SEARCH -->
-
-        <div class="search-container">
-          <span class="search-icon"> 🔍 </span>
-
-          <input
-            type="search"
-            class="search-bar"
-            placeholder="Search students, attendance, or reports..."
-            aria-label="Search"
-          />
-
-          <button type="button" class="search-button" aria-label="Search">→</button>
+          <a href="#contact" class="px-3 py-2 rounded-md text-white"> CONTACT </a>
         </div>
       </nav>
     </header>
 
-    <!-- MAIN -->
-
     <main>
-      <!--   HOME  -->
+      <!--  HERO  -->
+      <section id="home" class="bg-primary text-white px-10 py-24">
+        <div class="d-flex items-center justify-between flex-wrap gap-10">
+          <div class="w-66 landing-hero">
+            <p class="text-sm font-bold text-white mb-4">◇ &nbsp; TEACHER PORTAL ONLY</p>
 
-      <section id="home" class="landing-hero d-flex items-center justify-between gap-10 p-10">
-        <!-- HERO TEXT -->
+            <h1 class="text-56 font-bold text-white">Manage Library Attendance With Ease.</h1>
 
-        <div class="hero-content w-66">
-          <p class="teacher-only text-sm font-bold text-white">◇ &nbsp; TEACHER PORTAL ONLY</p>
+            <p class="text-md text-white mt-6">
+              A simple and efficient way for teachers to record, monitor, and manage student library attendance in one
+              secure platform.
+            </p>
 
-          <h1 class="landing-title text-56 font-bold text-white">
-            Manage Library<br />
+            <div class="d-flex items-center flex-wrap gap-4 mt-8">
+              <a
+                href="./auth/sign-in.html"
+                class="d-inline-flex items-center justify-center px-6 py-4 rounded-md border-2 border-white bg-white text-primary font-bold"
+              >
+                🔒 Teacher Login
+              </a>
 
-            Attendance<br />
-
-            With Ease.
-          </h1>
-
-          <p class="landing-description text-md text-white">
-            A simple and efficient way for teachers to record, monitor, and manage student library attendance all in one
-            secure platform.
-          </p>
-
-          <!-- HERO BUTTONS -->
-
-          <div class="hero-buttons d-flex items-center gap-4">
-            <a href="./auth/sign-in.html" class="landing-button"> 🔒 Teacher Login </a>
-
-            <a href="#how-it-works" class="landing-button"> ⓘ Learn More </a>
+              <a
+                href="#how-it-works"
+                class="d-inline-flex items-center justify-center px-6 py-4 rounded-md border-2 border-white text-white font-bold"
+              >
+                ⓘ Learn More
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- QUOTE -->
+          <div class="w-25 min-w-256 p-8 rounded-2xl border-2 border-white bg-dark shadow-lg">
+            <div class="text-5xl text-white">“</div>
 
-        <div class="quote-box p-8 rounded-2xl border-2 bg-dark">
-          <div class="quote-mark text-5xl text-white">“</div>
+            <h2 class="text-xl font-bold text-white mt-4">
+              Every visit counts.<br />
+              Every record matters.
+            </h2>
 
-          <h2 class="text-xl font-bold text-white">
-            Every visit counts.<br />
-
-            Every record matters.
-          </h2>
-
-          <p class="text-sm text-white">📖 Building a culture of responsibility and learning.</p>
+            <p class="text-sm text-white mt-4">📖 Building a culture of responsibility and learning.</p>
+          </div>
         </div>
       </section>
 
-      <!--   DASHBOARD  -->
+      <!--  DASHBOARD  -->
+      <section id="dashboard" class="px-10 py-16 bg-light border-b border-dark">
+        <div class="w-100">
+          <p class="text-sm font-bold text-primary mb-2">DASHBOARD</p>
 
-      <section id="dashboard" class="dashboard-section">
-        <div class="dashboard-container">
-          <!-- TITLE -->
+          <h2 class="text-40 font-bold">Library Overview</h2>
 
-          <div class="dashboard-heading">
-            <p class="dashboard-label text-sm font-bold">DASHBOARD</p>
+          <p class="text-base text-gray mt-3">Quickly monitor student attendance and library activity.</p>
 
-            <h2 class="text-40 font-bold">Library Overview</h2>
-
-            <p class="text-base">Quickly monitor student attendance and library activity.</p>
-          </div>
-
-          <!-- DASHBOARD CARDS  -->
-
-          <div class="dashboard-grid">
+          <div class="d-flex flex-wrap gap-5 mt-10">
             <!-- TOTAL STUDENTS -->
+            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <div class="text-32">👥</div>
 
-            <article class="dashboard-card">
-              <div class="dashboard-icon">👥</div>
+              <p class="text-xs font-bold text-gray mt-4">TOTAL STUDENTS</p>
 
-              <div class="dashboard-card-info">
-                <p class="dashboard-card-label">TOTAL STUDENTS</p>
+              <h3 class="text-40 font-bold mt-2">120</h3>
 
-                <h3 id="totalStudents">120</h3>
-
-                <p class="dashboard-card-description">Registered students</p>
-              </div>
+              <p class="text-sm text-gray mt-2">Registered students</p>
             </article>
 
-            <!-- TODAY -->
+            <!-- TODAY'S ATTENDANCE -->
+            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <div class="text-32">☑</div>
 
-            <article class="dashboard-card">
-              <div class="dashboard-icon">☑</div>
+              <p class="text-xs font-bold text-gray mt-4">TODAY'S ATTENDANCE</p>
 
-              <div class="dashboard-card-info">
-                <p class="dashboard-card-label">TODAY'S ATTENDANCE</p>
+              <h3 class="text-40 font-bold mt-2">86</h3>
 
-                <h3 id="todayAttendance">86</h3>
-
-                <p class="dashboard-card-description">Students recorded today</p>
-              </div>
+              <p class="text-sm text-gray mt-2">Students recorded today</p>
             </article>
 
-            <!-- CURRENTLY INSIDE -->
+            <!-- CURRENTLY IN LIBRARY -->
+            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <div class="text-32">📚</div>
 
-            <article class="dashboard-card">
-              <div class="dashboard-icon">📚</div>
+              <p class="text-xs font-bold text-gray mt-4">CURRENTLY IN LIBRARY</p>
 
-              <div class="dashboard-card-info">
-                <p class="dashboard-card-label">CURRENTLY IN LIBRARY</p>
+              <h3 class="text-40 font-bold mt-2">24</h3>
 
-                <h3 id="currentlyInside">24</h3>
-
-                <p class="dashboard-card-description">Students currently inside</p>
-              </div>
+              <p class="text-sm text-gray mt-2">Students currently inside</p>
             </article>
 
             <!-- REPORTS -->
+            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <div class="text-32">📊</div>
 
-            <article class="dashboard-card">
-              <div class="dashboard-icon">📊</div>
+              <p class="text-xs font-bold text-gray mt-4">REPORTS</p>
 
-              <div class="dashboard-card-info">
-                <p class="dashboard-card-label">REPORTS</p>
+              <h3 class="text-40 font-bold mt-2">12</h3>
 
-                <h3 id="totalReports">12</h3>
-
-                <p class="dashboard-card-description">Available reports</p>
-              </div>
+              <p class="text-sm text-gray mt-2">Available reports</p>
             </article>
           </div>
 
           <!-- RECENT ATTENDANCE -->
-
-          <div class="recent-attendance">
-            <div class="recent-heading">
+          <div class="mt-10 p-8 rounded-xl border-2 border-dark bg-white shadow-md">
+            <div class="d-flex items-center justify-between flex-wrap gap-4 mb-6">
               <div>
-                <p class="dashboard-label text-xs font-bold">ACTIVITY</p>
+                <p class="text-xs font-bold text-primary">ACTIVITY</p>
 
-                <h3 class="text-xl font-bold">Recent Attendance</h3>
+                <h3 class="text-xl font-bold mt-2">Recent Attendance</h3>
               </div>
 
-              <a href="reports.html" class="dashboard-view-button"> View Reports → </a>
+              <a
+                href="./pages/dashboard.html"
+                class="px-4 py-2 rounded-md border-2 border-dark bg-white text-dark font-bold"
+              >
+                View Dashboard →
+              </a>
             </div>
 
-            <!-- TABLE -->
-
-            <div class="attendance-table-wrapper">
-              <table class="attendance-table">
+            <div class="overflow-x">
+              <table class="w-100">
                 <thead>
-                  <tr>
-                    <th>Student</th>
+                  <tr class="border-b border-light-gray">
+                    <th class="p-3 text-sm text-gray text-center">Student</th>
 
-                    <th>Time In</th>
+                    <th class="p-3 text-sm text-gray text-center">Time In</th>
 
-                    <th>Time Out</th>
+                    <th class="p-3 text-sm text-gray text-center">Time Out</th>
 
-                    <th>Status</th>
+                    <th class="p-3 text-sm text-gray text-center">Status</th>
                   </tr>
                 </thead>
 
-                <tbody id="attendanceTableBody">
-                  <tr>
-                    <td>Regie Carl Arena</td>
+                <tbody>
+                  <tr class="border-b border-light-gray">
+                    <td class="p-3 text-sm">Regie Carl Arena</td>
 
-                    <td>8:15 AM</td>
+                    <td class="p-3 text-sm">8:15 AM</td>
 
-                    <td>—</td>
+                    <td class="p-3 text-sm">—</td>
 
-                    <td>
-                      <span class="status-present"> Inside </span>
-                    </td>
+                    <td class="p-3 text-sm font-bold text-accent">Inside</td>
+                  </tr>
+
+                  <tr class="border-b border-light-gray">
+                    <td class="p-3 text-sm">Luke de Leon</td>
+
+                    <td class="p-3 text-sm">8:32 AM</td>
+
+                    <td class="p-3 text-sm">10:15 AM</td>
+
+                    <td class="p-3 text-sm font-bold text-gray">Completed</td>
                   </tr>
 
                   <tr>
-                    <td>Luke de Leon</td>
+                    <td class="p-3 text-sm">Allaiza Maglasang</td>
 
-                    <td>8:32 AM</td>
+                    <td class="p-3 text-sm">9:04 AM</td>
 
-                    <td>10:15 AM</td>
+                    <td class="p-3 text-sm">—</td>
 
-                    <td>
-                      <span class="status-completed"> Completed </span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>Allaiza Maglasang</td>
-
-                    <td>9:04 AM</td>
-
-                    <td>—</td>
-
-                    <td>
-                      <span class="status-present"> Inside </span>
-                    </td>
+                    <td class="p-3 text-sm font-bold text-accent">Inside</td>
                   </tr>
                 </tbody>
               </table>
@@ -254,322 +201,258 @@
         </div>
       </section>
 
-      <!--   SERVICES -->
+      <!--  SERVICES  -->
+      <section id="services" class="px-10 py-16 bg-white border-b border-dark">
+        <p class="text-sm font-bold text-primary mb-2">SERVICES</p>
 
-      <section id="services" class="services-section">
-        <div class="services-container">
-          <div class="services-heading">
-            <p class="services-label text-sm font-bold">SERVICES</p>
+        <h2 class="text-40 font-bold">
+          Everything You Need<br />
+          In One Place.
+        </h2>
 
-            <h2 class="text-40 font-bold">
-              Everything You Need
-              <br />
-              In One Place.
-            </h2>
+        <p class="text-base text-gray mt-4 w-66">
+          Manage student information, record attendance, and monitor library activity using one organized system.
+        </p>
 
-            <p class="text-base">
-              Manage student information, record attendance, and monitor library activity using one organized system.
-            </p>
-          </div>
+        <div class="d-flex flex-wrap gap-5 mt-10">
+          <!-- MANAGE STUDENTS -->
+          <a
+            href="./pages/students.html"
+            class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md"
+          >
+            <div class="text-40">👥</div>
 
-          <!-- SERVICES GRID -->
+            <h3 class="text-xl font-bold mt-6">Manage Students</h3>
 
-          <div class="services-grid">
-            <!-- MANAGE STUDENTS -->
+            <p class="text-sm text-gray mt-3">Add, update, and organize student information.</p>
 
-            <a href="manage-students.html" class="service-card">
-              <div class="service-icon">👥</div>
+            <span class="d-block text-sm font-bold mt-8"> Open Service → </span>
+          </a>
 
-              <h3 class="text-xl font-bold">Manage Students</h3>
+          <!-- RECORD ATTENDANCE -->
+          <a
+            href="./pages/dashboard.html"
+            class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md"
+          >
+            <div class="text-40">☑</div>
 
-              <p class="text-sm">Add, update, and organize student information.</p>
+            <h3 class="text-xl font-bold mt-6">Record Attendance</h3>
 
-              <span class="service-link"> Open Service → </span>
-            </a>
+            <p class="text-sm text-gray mt-3">Quickly record student library visits and attendance.</p>
 
-            <!-- ATTENDANCE -->
+            <span class="d-block text-sm font-bold mt-8"> Open Service → </span>
+          </a>
 
-            <a href="record-attendance.html" class="service-card">
-              <div class="service-icon">☑</div>
+          <!-- VIEW REPORTS -->
+          <a
+            href="./pages/dashboard.html"
+            class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md"
+          >
+            <div class="text-40">📊</div>
 
-              <h3 class="text-xl font-bold">Record Attendance</h3>
+            <h3 class="text-xl font-bold mt-6">View Reports</h3>
 
-              <p class="text-sm">Quickly record student library visits and attendance.</p>
+            <p class="text-sm text-gray mt-3">Check attendance records and create useful reports.</p>
 
-              <span class="service-link"> Open Service → </span>
-            </a>
-
-            <!-- REPORTS -->
-
-            <a href="reports.html" class="service-card">
-              <div class="service-icon">📊</div>
-
-              <h3 class="text-xl font-bold">View Reports</h3>
-
-              <p class="text-sm">Check attendance records and create useful reports.</p>
-
-              <span class="service-link"> Open Service → </span>
-            </a>
-          </div>
+            <span class="d-block text-sm font-bold mt-8"> Open Service → </span>
+          </a>
         </div>
       </section>
 
-      <!--   FEATURES -->
+      <!--  FEATURES  -->
+      <section id="features" class="d-flex flex-wrap border-b border-dark">
+        <article class="flex-1 min-w-256 p-12 text-center border-r border-dark bg-light">
+          <div class="text-40">👤</div>
 
-      <section id="features" class="features-section d-grid border-t border-dark border-b">
-        <article class="feature-card p-12 text-center">
-          <div class="feature-icon">👤</div>
+          <h3 class="text-lg font-bold mt-5">For Teachers Only</h3>
 
-          <h3 class="text-lg font-bold">For Teachers Only</h3>
-
-          <p class="text-sm">A secure portal exclusively for teachers to manage library attendance.</p>
+          <p class="text-sm text-gray mt-3">A secure portal exclusively for teachers to manage library attendance.</p>
         </article>
 
-        <article class="feature-card p-12 text-center">
-          <div class="feature-icon">📋</div>
+        <article class="flex-1 min-w-256 p-12 text-center border-r border-dark bg-white">
+          <div class="text-40">📋</div>
 
-          <h3 class="text-lg font-bold">Track Attendance</h3>
+          <h3 class="text-lg font-bold mt-5">Track Attendance</h3>
 
-          <p class="text-sm">Easily view and manage student attendance records in real time.</p>
+          <p class="text-sm text-gray mt-3">Easily view and manage student attendance records.</p>
         </article>
 
-        <article class="feature-card p-12 text-center">
-          <div class="feature-icon">👥</div>
+        <article class="flex-1 min-w-256 p-12 text-center border-r border-dark bg-light">
+          <div class="text-40">👥</div>
 
-          <h3 class="text-lg font-bold">Student Database</h3>
+          <h3 class="text-lg font-bold mt-5">Student Database</h3>
 
-          <p class="text-sm">Register students and keep their records organized and updated.</p>
+          <p class="text-sm text-gray mt-3">Keep student records organized and updated.</p>
         </article>
 
-        <article class="feature-card p-12 text-center">
-          <div class="feature-icon">📊</div>
+        <article class="flex-1 min-w-256 p-12 text-center bg-white">
+          <div class="text-40">📊</div>
 
-          <h3 class="text-lg font-bold">Generate Reports</h3>
+          <h3 class="text-lg font-bold mt-5">Generate Reports</h3>
 
-          <p class="text-sm">Create accurate attendance reports with a few clicks.</p>
+          <p class="text-sm text-gray mt-3">Create accurate attendance reports with a few clicks.</p>
         </article>
       </section>
 
-      <!--   HOW IT WORKS / LEARN MORE -->
-
-      <section id="how-it-works" class="how-it-works bg-light border-b border-dark px-10 py-16 text-center">
+      <!--  HOW IT WORKS  -->
+      <section id="how-it-works" class="px-10 py-16 text-center bg-light border-b border-dark">
         <h2 class="text-32 font-bold">HOW IT WORKS</h2>
 
-        <p class="text-base mb-8">Simple Steps, Better Management</p>
+        <p class="text-base text-gray mt-3">Simple Steps, Better Management</p>
 
-        <!-- STEPS -->
-
-        <div class="steps w-100 d-flex items-stretch gap-5">
+        <div class="d-flex flex-wrap gap-5 mt-10">
           <!-- STEP 1 -->
+          <a
+            href="./auth/sign-in.html"
+            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
+          >
+            <div class="text-32">🔐</div>
 
-          <div class="step active border-dark bg-white shadow p-6 rounded-xl" onclick="showStep(1)">
-            <span class="step-icon"> 🔐 </span>
+            <p class="text-sm font-bold text-primary mt-4">STEP 01</p>
 
-            <span class="step-number text-sm font-bold"> STEP 01 </span>
+            <h3 class="text-lg font-bold mt-2">Login</h3>
 
-            <a href="./auth/sign-in.html" class="step-title text-lg font-bold step-link"> Login </a>
-
-            <span class="step-short text-sm"> Access the teacher portal. </span>
-          </div>
+            <p class="text-sm text-gray mt-3">Access the teacher portal.</p>
+          </a>
 
           <!-- STEP 2 -->
+          <a
+            href="./pages/students.html"
+            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
+          >
+            <div class="text-32">👥</div>
 
-          <div class="step p-6 rounded-xl" onclick="showStep(2)">
-            <span class="step-icon"> 👥 </span>
+            <p class="text-sm font-bold text-primary mt-4">STEP 02</p>
 
-            <span class="step-number text-sm font-bold"> STEP 02 </span>
+            <h3 class="text-lg font-bold mt-2">Manage Students</h3>
 
-            <a href="manage-students.html" class="step-title text-lg font-bold step-link"> Manage Students </a>
-
-            <span class="step-short text-sm"> Manage student information. </span>
-          </div>
+            <p class="text-sm text-gray mt-3">Manage student information.</p>
+          </a>
 
           <!-- STEP 3 -->
+          <a
+            href="./pages/dashboard.html"
+            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
+          >
+            <div class="text-32">☑</div>
 
-          <div class="step p-6 rounded-xl" onclick="showStep(3)">
-            <span class="step-icon"> ☑ </span>
+            <p class="text-sm font-bold text-primary mt-4">STEP 03</p>
 
-            <span class="step-number text-sm font-bold"> STEP 03 </span>
+            <h3 class="text-lg font-bold mt-2">Record Attendance</h3>
 
-            <a href="record-attendance.html" class="step-title text-lg font-bold step-link"> Record Attendance </a>
-
-            <span class="step-short text-sm"> Record every library visit. </span>
-          </div>
+            <p class="text-sm text-gray mt-3">Record every library visit.</p>
+          </a>
 
           <!-- STEP 4 -->
+          <a
+            href="./pages/dashboard.html"
+            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
+          >
+            <div class="text-32">📄</div>
 
-          <div class="step p-6 rounded-xl" onclick="showStep(4)">
-            <span class="step-icon"> 📄 </span>
+            <p class="text-sm font-bold text-primary mt-4">STEP 04</p>
 
-            <span class="step-number text-sm font-bold"> STEP 04 </span>
+            <h3 class="text-lg font-bold mt-2">View Reports</h3>
 
-            <a href="reports.html" class="step-title text-lg font-bold step-link"> View Reports </a>
-
-            <span class="step-short text-sm"> View attendance reports. </span>
-          </div>
-        </div>
-
-        <!-- DESCRIPTION BOX -->
-
-        <div class="step-details p-8 mt-8 rounded-xl bg-white">
-          <div id="detailIcon" class="detail-icon text-40">🔐</div>
-
-          <p id="detailStep" class="text-sm font-bold mt-3">STEP 01</p>
-
-          <h3 id="detailTitle" class="text-2xl font-bold mt-2">Login</h3>
-
-          <p id="detailText" class="text-base mt-3">
-            Teachers log in using their secure account to access the teacher portal.
-          </p>
-
-          <a id="detailAction" href="./auth/sign-in.html" class="landing-button mt-5"> Go to Login </a>
+            <p class="text-sm text-gray mt-3">View attendance reports.</p>
+          </a>
         </div>
       </section>
 
-      <!--   ABOUT US -->
+      <!--  ABOUT  -->
+      <section id="about" class="px-10 py-16 bg-white border-b border-dark">
+        <div class="d-flex items-center flex-wrap gap-10">
+          <div class="flex-1 min-w-320">
+            <p class="text-sm font-bold text-primary mb-2">ABOUT US</p>
 
-      <section id="about" class="about-section">
-        <div class="about-container">
-          <div class="about-content">
-            <p class="about-label text-sm font-bold">ABOUT US</p>
+            <h2 class="text-40 font-bold">Making Library Attendance Simple and Organized.</h2>
 
-            <h2 class="text-40 font-bold">
-              Making Library Attendance
-              <br />
-              Simple and Organized.
-            </h2>
-
-            <p class="text-base">
-              The Library Attendance Monitoring System was created to provide teachers with a faster and more organized
-              way of monitoring student library attendance.
+            <p class="text-base mt-6">
+              The Library Attendance Monitoring System provides teachers with a faster and more organized way of
+              monitoring student library attendance.
             </p>
 
-            <p class="text-base">
-              Instead of relying on slow manual sign-in records, the system provides one central platform where teachers
-              can manage students, record attendance, and view reports.
+            <p class="text-base mt-4">
+              Instead of relying on slow manual sign-in records, the system provides one central platform for managing
+              students, recording attendance, and viewing reports.
             </p>
           </div>
 
-          <div class="about-box">
-            <div class="about-box-icon">📚</div>
+          <div class="flex-1 min-w-256 p-10 rounded-xl border-2 border-dark bg-light text-center shadow-md">
+            <div class="text-5xl">📚</div>
 
-            <h3 class="text-xl font-bold">Our Purpose</h3>
+            <h3 class="text-xl font-bold mt-5">Our Purpose</h3>
 
-            <p class="text-sm">Better records. Easier monitoring. More organized library management.</p>
+            <p class="text-sm text-gray mt-3">Better records. Easier monitoring. More organized library management.</p>
           </div>
         </div>
       </section>
 
-      <!--   CONTACT -->
+      <!--  CONTACT  -->
+      <section id="contact" class="px-10 py-16 bg-light border-b border-dark">
+        <p class="text-sm font-bold text-primary mb-2">CONTACT</p>
 
-      <section id="contact" class="contact-section">
-        <div class="contact-container">
-          <div class="contact-heading">
-            <p class="contact-label text-sm font-bold">CONTACT</p>
+        <h2 class="text-40 font-bold">Get In Touch</h2>
 
-            <h2 class="text-40 font-bold">Get In Touch</h2>
+        <p class="text-base text-gray mt-4 w-66">
+          Have a question about the Library Attendance Monitoring System? Contact us through the information below.
+        </p>
 
-            <p class="text-base">
-              Have a question about the Library Attendance Monitoring System? Contact us through the information below.
-            </p>
+        <div class="d-flex flex-wrap gap-5 mt-10">
+          <div class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-white text-center">
+            <div class="text-40">🏫</div>
+
+            <h3 class="text-lg font-bold mt-4">School</h3>
+
+            <p class="text-sm text-gray mt-2">Britech College</p>
           </div>
 
-          <div class="contact-grid">
-            <!-- SCHOOL -->
+          <div class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-white text-center">
+            <div class="text-40">✉</div>
 
-            <div class="contact-card">
-              <div class="contact-icon">🏫</div>
+            <h3 class="text-lg font-bold mt-4">Email</h3>
 
-              <h3 class="text-lg font-bold">School</h3>
+            <p class="text-sm text-gray mt-2">library@britech.edu</p>
+          </div>
 
-              <p class="text-sm">Britech College</p>
-            </div>
+          <div class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-white text-center">
+            <div class="text-40">📚</div>
 
-            <!-- EMAIL -->
+            <h3 class="text-lg font-bold mt-4">Library</h3>
 
-            <div class="contact-card">
-              <div class="contact-icon">✉</div>
-
-              <h3 class="text-lg font-bold">Email</h3>
-
-              <p class="text-sm">library@britech.edu</p>
-            </div>
-
-            <!-- LIBRARY -->
-
-            <div class="contact-card">
-              <div class="contact-icon">📚</div>
-
-              <h3 class="text-lg font-bold">Library</h3>
-
-              <p class="text-sm">Library Office</p>
-            </div>
+            <p class="text-sm text-gray mt-2">Library Office</p>
           </div>
         </div>
       </section>
 
-      <!--   BOTTOM CTA -->
-
-      <section class="bottom-section d-flex items-center justify-between gap-10 px-10 py-16">
+      <!--  CTA  -->
+      <section class="d-flex items-center justify-between flex-wrap gap-10 px-10 py-16 bg-dark">
         <div>
-          <h2 class="text-32 font-bold">
+          <h2 class="text-32 font-bold text-white">
             Empowering Teachers.<br />
-
             Building Better Habits.
           </h2>
 
-          <p class="text-sm mt-3">
+          <p class="text-sm text-white mt-4">
             The right tool for keeping your library environment well-organized and accountable.
           </p>
         </div>
+
+        <a href="./auth/sign-in.html" class="px-6 py-4 rounded-md border-2 border-white bg-white text-dark font-bold">
+          Teacher Login →
+        </a>
       </section>
     </main>
 
-    <!-- FOOTER -->
-
-    <footer class="landing-footer p-8">
-      <div class="d-flex items-center justify-between">
-        <p>© 2026 Library Attendance Monitoring System</p>
+    <!--  FOOTER  -->
+    <footer class="p-8 bg-white border-t border-dark">
+      <div class="d-flex items-center justify-between flex-wrap gap-4">
+        <p class="text-sm">© 2026 Library Attendance Monitoring System</p>
 
         <div class="d-flex gap-5">
-          <a href="javascript:void(0)" onclick="openModal('privacyModal')"> Privacy Policy </a>
-
-          <a href="javascript:void(0)" onclick="openModal('termsModal')"> Terms of Use </a>
+          <a href="#home" class="text-sm text-dark"> Back to top ↑ </a>
         </div>
       </div>
     </footer>
-
-    <!-- PRIVACY MODAL -->
-
-    <div id="privacyModal" class="modal">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('privacyModal')">×</button>
-
-        <p class="text-sm font-bold">PRIVACY POLICY</p>
-
-        <h2 class="text-2xl font-bold">Privacy Policy</h2>
-
-        <p>
-          Your privacy is important to us. This system collects and stores library attendance information to help
-          teachers manage student records.
-        </p>
-      </div>
-    </div>
-
-    <!-- TERMS MODAL -->
-
-    <div id="termsModal" class="modal">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('termsModal')">×</button>
-
-        <p class="text-sm font-bold">TERMS OF USE</p>
-
-        <h2 class="text-2xl font-bold">Terms of Use</h2>
-
-        <p>
-          This system is intended for authorized teachers and school personnel for legitimate school-related activities.
-        </p>
-      </div>
-    </div>
   </body>
 </html>

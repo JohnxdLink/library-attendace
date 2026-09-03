@@ -3,9 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dashboard | Library Attendance Monitoring Sheet</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css" />
   </head>
-  <body>
-    <h1>Dashboard Page</h1>
+
+  <body class="dashboard-page">
+    <!-- NAVIGATION BAR  -->
+
+    <header class="landing-navbar">
+      <nav class="d-flex items-center justify-between px-10 py-0">
+        <!-- LOGO -->
+
+        <div class="d-flex items-center gap-5">
+          <a href="#home" class="logo d-flex items-center">
+            <img
+              class="d-flex items-center h-25 w-25"
+              src="../assets/images/logo/britech-logo.png"
+              alt="Britech College Logo"
+            />
+          </a>
+
+          <!-- NAVIGATION LINKS -->
+
+          <div class="d-flex items-center gap-2">
+            <a href="../index.html" class="nav-link"> HOME </a>
+
+            <a href="#dashboard" class="nav-link"> DASHBOARD </a>
+
+            <a href="#services" class="nav-link"> SERVICES </a>
+
+            <a href="#features" class="nav-link"> FEATURES </a>
+
+            <a href="#about" class="nav-link"> ABOUT US </a>
+
+            <a href="#contact" class="nav-link"> CONTACT </a>
+          </div>
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+          <span class="search-icon"> 🔍 </span>
+
+          <input
+            type="search"
+            class="search-bar"
+            placeholder="Search students, attendance, or reports..."
+            aria-label="Search"
+          />
+
+          <button type="button" class="search-button" aria-label="Search">→</button>
+        </div>
+      </nav>
+    </header>
   </body>
 </html>
