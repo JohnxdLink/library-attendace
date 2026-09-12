@@ -22,6 +22,22 @@
   --color-black-50: #00000080;
   --color-white-50: #ffffff80;
 
+  /* Extra colors for info */
+  --color-info-success: #2e7d32;
+  --color-info-warning: #f9a825;
+  --color-info-danger: #d32f2f;
+  --color-info-info: #1976d2;
+
+  --color-info-success-light: #e8f5e9;
+  --color-info-warning-light: #fff8e1;
+  --color-info-danger-light: #ffebee;
+  --color-info-info-light: #e3f2fd;
+
+  --color-info-success-50: #2e7d3280;
+  --color-info-warning-50: #f9a82580;
+  --color-info-danger-50: #d32f2f80;
+  --color-info-info-50: #1976d280;
+
   /* Font sizes */
   --font-size-56: 56px;
   --font-size-40: 40px;

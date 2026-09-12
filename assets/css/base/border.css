@@ -181,3 +181,19 @@
 .border-separate {
   border-collapse: separate;
 }
+
+.border-succcess {
+  border-color: var(--color-info-success);
+}
+
+.border-danger {
+  border-color: var(--color-info-danger);
+}
+
+.border-info {
+  border-color: var(--color-info-info);
+}
+
+.border-warning-info {
+  border-color: var(--color-info-warning);
+}
