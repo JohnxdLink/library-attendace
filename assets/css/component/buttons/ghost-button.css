@@ -1,0 +1,72 @@
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-20);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-none);
+  color: var(--color-dark);
+  background-color: transparent;
+  border: var(--border-thin) solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Hover */
+.btn-ghost:hover {
+  background-color: var(--color-light);
+  border-color: var(--color-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Active */
+.btn-ghost:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Focus */
+.btn-ghost:focus-visible {
+  outline: var(--border-medium) solid var(--color-dark-50);
+  outline-offset: var(--space-4);
+}
+
+/* Disabled */
+.btn-ghost:disabled {
+  color: var(--color-gray);
+  background-color: transparent;
+  border-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Loading */
+.btn-ghost.is-loading {
+  pointer-events: none;
+  cursor: wait;
+}
+
+/* Loading Spinner */
+.btn-ghost.is-loading::before {
+  content: "";
+  width: var(--space-12);
+  height: var(--space-12);
+  border: var(--border-medium) solid var(--color-dark-50);
+  border-top-color: var(--color-dark);
+  border-radius: var(--radius-full);
+  animation: btn-ghost-spinner 0.7s linear infinite;
+}
+
+@keyframes btn-ghost-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

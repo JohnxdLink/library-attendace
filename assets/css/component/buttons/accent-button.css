@@ -1,0 +1,72 @@
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-20);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-none);
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+  border: var(--border-thin) solid var(--color-accent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Hover */
+.btn-accent:hover {
+  background-color: var(--color-light);
+  border-color: var(--color-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Active */
+.btn-accent:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Focus */
+.btn-accent:focus-visible {
+  outline: var(--border-medium) solid var(--color-accent-50);
+  outline-offset: var(--space-4);
+}
+
+/* Disabled */
+.btn-accent:disabled {
+  color: var(--color-gray);
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Loading */
+.btn-accent.is-loading {
+  pointer-events: none;
+  cursor: wait;
+}
+
+/* Loading Spinner */
+.btn-accent.is-loading::before {
+  content: "";
+  width: var(--space-12);
+  height: var(--space-12);
+  border: var(--border-medium) solid var(--color-dark-50);
+  border-top-color: var(--color-dark);
+  border-radius: var(--radius-full);
+  animation: btn-accent-spinner 0.7s linear infinite;
+}
+
+@keyframes btn-accent-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
