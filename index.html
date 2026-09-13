@@ -6,80 +6,76 @@
     <title>Library Attendance Monitoring System</title>
 
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/pages/landing.css" />
   </head>
 
   <body class="bg-light text-dark">
     <!-- NAVIGATION -->
-    <header class="bg-dark border-b border-dark position-fixed w-100">
-      <nav class="d-flex items-center justify-between px-10 py-3">
-        <!-- BRAND -->
-        <a href="#home" class="d-flex items-center gap-3 text-white font-bold text-lg">
-          <img class="h-25 w-25" src="./assets/images/logo/britech-logo.png" alt="Britech College Logo" />
-          <span class="text-white"> Britech College </span>
+    <header class="px-6 py-12 bg-dark text-light d-flex flex-row items-center justify-between shadow header__h-10">
+      <div class="d-flex flex-row items-center gap-3">
+        <a class="w-96 h-auto">
+          <img class="w-100 h-100" src="./assets/images/logo/britech-logo.png" alt="Britech College Logo" />
         </a>
-        <!-- NAVIGATION LINKS -->
-        <div class="d-flex items-center gap-2">
-          <a href="#home" class="px-3 py-2 text-white font-bold"> HOME </a>
-          <a href="#dashboard" class="px-3 py-2 text-white font-bold"> DASHBOARD </a>
-          <a href="#services" class="px-3 py-2 text-white font-bold"> SERVICES </a>
-          <a href="#features" class="px-3 py-2 text-white font-bold"> FEATURES </a>
-          <a href="#about" class="px-3 py-2 text-white font-bold"> ABOUT </a>
-          <a href="#contact" class="px-3 py-2 text-white font-bold"> CONTACT </a>
+        <div>
+          <h1>Britech College</h1>
+          <p class="mt-2 text-sm text-light-gray">White Rose, Yati, Liloan, Cebu, 6000</p>
         </div>
-        <!-- SIMPLE SEARCH -->
-        <div class="d-flex items-center gap-2">
-          <input
-            type="search"
-            class="px-3 py-2 rounded-md border border-white bg-white text-dark"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </div>
+      </div>
+      <nav class="d-flex flex-row gap-1">
+        <a href="#home" class="btn-tertiary btn-nav">HOME</a>
+        <a href="#dashboard" class="btn-tertiary btn-nav">DASHBOARD</a>
+        <a href="#services" class="btn-tertiary btn-nav">SERVICES</a>
+        <a href="#features" class="btn-tertiary btn-nav">FEATURES</a>
+        <a href="#about" class="btn-tertiary btn-nav">ABOUT</a>
+        <a href="#contact" class="btn-tertiary btn-nav">CONTACT</a>
       </nav>
+
+      <form class="w-320" action="">
+        <input class="input" type="text" name="" id="" placeholder="Search..." />
+      </form>
     </header>
 
-    <main>
+    <main class="main-container__h-90">
       <!--  HERO  -->
-      <section id="home" class="bg-primary text-white px-12 py-24 hero-main">
-        <div class="d-flex items-center justify-between flex-wrap gap-10">
-          <div class="w-66">
-            <p class="text-sm font-bold text-white mb-4">◇ &nbsp; TEACHER PORTAL ONLY</p>
+      <section id="home" class="px-10 py-24 d-flex flex-row justify-between bg-navy text-white">
+        <article class="w-1/2">
+          <p class="text-sm font-bold text-white mb-4">
+            <span class="mr-2 text-accent fa-solid fa-diamond"></span> TEACHER PORTAL ONLY
+          </p>
 
-            <h1 class="text-56 font-bold text-white">Manage Library Attendance With Ease.</h1>
+          <h1 class="text-56 font-bold text-white">Manage Library Attendance <br />With Ease.</h1>
 
-            <p class="text-md text-white mt-6">
-              A simple and efficient way for teachers to record, monitor, and manage student library attendance in one
-              secure platform.
-            </p>
+          <p class="text-md text-white mt-3">
+            A simple and efficient way for teachers to record, monitor, <br />and manage student library attendance in
+            one secure platform.
+          </p>
 
-            <div class="d-flex items-center flex-wrap gap-4 mt-8">
-              <a
-                href="./auth/sign-in.html"
-                class="d-inline-flex items-center justify-center px-6 py-4 rounded-md border-2 border-white bg-white text-primary font-bold"
-              >
-                🔒 Teacher Login
-              </a>
+          <div class="d-flex items-center flex-wrap gap-4 mt-8">
+            <a href="./auth/sign-in.html" class="btn-primary btn-login">
+              <span class="mr-2 fa-solid fa-lock"></span>Teacher Login
+            </a>
 
-              <a
-                href="#how-it-works"
-                class="d-inline-flex items-center justify-center px-6 py-4 rounded-md border-2 border-white text-white font-bold"
-              >
-                ⓘ Learn More
-              </a>
-            </div>
+            <a href="#how-it-works" class="btn-accent">
+              <span class="mr-2 fa-solid fa-circle-info"></span> Learn More
+            </a>
           </div>
+        </article>
 
-          <div class="w-25 min-w-256 p-8 rounded-2xl border-2 border-white bg-dark shadow-lg">
-            <div class="text-5xl text-white">“</div>
+        <article class="w-1/3">
+          <div class="w-100 h-100 p-8 rounded-2xl border-2 border-white bg-dark shadow-lg">
+            <h1 class="text-5xl text-white">“</h1>
 
             <h2 class="text-xl font-bold text-white mt-4">
               Every visit counts.<br />
               Every record matters.
             </h2>
 
-            <p class="text-sm text-white mt-4">📖 Building a culture of responsibility and learning.</p>
+            <p class="text-sm text-white mt-4">
+              <span class="mr-2 text-accent fa-solid fa-book-open"></span>Building a culture of responsibility and
+              learning.
+            </p>
           </div>
-        </div>
+        </article>
       </section>
 
       <!--  DASHBOARD  -->
@@ -93,8 +89,8 @@
 
           <div class="d-flex flex-wrap gap-5 mt-10">
             <!-- TOTAL STUDENTS -->
-            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
-              <div class="text-32">👥</div>
+            <article class="flex-1 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <i class="text-32 text-secondary fa-solid fa-users"></i>
 
               <p class="text-xs font-bold text-gray mt-4">TOTAL STUDENTS</p>
 
@@ -104,8 +100,8 @@
             </article>
 
             <!-- TODAY'S ATTENDANCE -->
-            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
-              <div class="text-32">☑</div>
+            <article class="flex-1 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <i class="text-32 text-secondary fa-solid fa-circle-check"></i>
 
               <p class="text-xs font-bold text-gray mt-4">TODAY'S ATTENDANCE</p>
 
@@ -115,8 +111,8 @@
             </article>
 
             <!-- CURRENTLY IN LIBRARY -->
-            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
-              <div class="text-32">📚</div>
+            <article class="flex-1 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <div class="text-32 text-secondary fa-solid fa-book"></div>
 
               <p class="text-xs font-bold text-gray mt-4">CURRENTLY IN LIBRARY</p>
 
@@ -126,8 +122,8 @@
             </article>
 
             <!-- REPORTS -->
-            <article class="flex-1 min-w-224 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
-              <div class="text-32">📊</div>
+            <article class="flex-1 p-6 rounded-xl border-2 border-dark bg-white shadow-md">
+              <i class="text-32 text-secondary fa-solid fa-chart-pie"></i>
 
               <p class="text-xs font-bold text-gray mt-4">REPORTS</p>
 
@@ -142,61 +138,49 @@
             <div class="d-flex items-center justify-between flex-wrap gap-4 mb-6">
               <div>
                 <p class="text-xs font-bold text-primary">ACTIVITY</p>
-
                 <h3 class="text-xl font-bold mt-2">Recent Attendance</h3>
               </div>
 
-              <a
-                href="./pages/dashboard.html"
-                class="px-4 py-2 rounded-md border-2 border-dark bg-white text-dark font-bold"
-              >
-                View Dashboard →
-              </a>
+              <a href="./auth/sign-in.html" class="btn-ghost"
+                >View Dashboard <span class="fa-solid fa-arrow-right"></span
+              ></a>
             </div>
 
-            <div class="overflow-x">
-              <table class="w-100">
+            <div class="table-wrapper">
+              <table class="table">
                 <thead>
-                  <tr class="border-b border-light-gray">
-                    <th class="p-3 text-sm text-gray text-center">Student</th>
-
-                    <th class="p-3 text-sm text-gray text-center">Time In</th>
-
-                    <th class="p-3 text-sm text-gray text-center">Time Out</th>
-
-                    <th class="p-3 text-sm text-gray text-center">Status</th>
+                  <tr>
+                    <th class="text-center">Student</th>
+                    <th class="text-center">Grade</th>
+                    <th class="text-center">Section</th>
+                    <th class="text-center">Time In</th>
+                    <th class="text-center">Time Out</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <tr class="border-b border-light-gray">
-                    <td class="p-3 text-sm">Regie Carl Arena</td>
-
-                    <td class="p-3 text-sm">8:15 AM</td>
-
-                    <td class="p-3 text-sm">—</td>
-
-                    <td class="p-3 text-sm font-bold text-accent">Inside</td>
-                  </tr>
-
-                  <tr class="border-b border-light-gray">
-                    <td class="p-3 text-sm">Luke de Leon</td>
-
-                    <td class="p-3 text-sm">8:32 AM</td>
-
-                    <td class="p-3 text-sm">10:15 AM</td>
-
-                    <td class="p-3 text-sm font-bold text-gray">Completed</td>
+                  <tr>
+                    <td>Regie Carl Arena</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">8:15 AM</td>
+                    <td class="text-center">—</td>
                   </tr>
 
                   <tr>
-                    <td class="p-3 text-sm">Allaiza Maglasang</td>
+                    <td>Luke de Leon</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">8:32 AM</td>
+                    <td class="text-center">10:15 AM</td>
+                  </tr>
 
-                    <td class="p-3 text-sm">9:04 AM</td>
-
-                    <td class="p-3 text-sm">—</td>
-
-                    <td class="p-3 text-sm font-bold text-accent">Inside</td>
+                  <tr>
+                    <td>Allaiza Maglasang</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">9:04 AM</td>
+                    <td class="text-center">—</td>
                   </tr>
                 </tbody>
               </table>
@@ -220,77 +204,62 @@
 
         <div class="d-flex flex-wrap gap-5 mt-10">
           <!-- MANAGE STUDENTS -->
-          <a
-            href="./pages/students.html"
-            class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md"
-          >
-            <div class="text-40">👥</div>
+          <div class="flex-1 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md">
+            <i class="text-40 text-primary fa-solid fa-user-group"></i>
 
             <h3 class="text-xl font-bold mt-6">Manage Students</h3>
 
             <p class="text-sm text-gray mt-3">Add, update, and organize student information.</p>
-
-            <span class="d-block text-sm font-bold mt-8"> Open Service → </span>
-          </a>
+          </div>
 
           <!-- RECORD ATTENDANCE -->
-          <a
-            href="./pages/dashboard.html"
-            class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md"
-          >
-            <div class="text-40">☑</div>
+          <div class="flex-1 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md">
+            <i class="text-40 text-primary fa-solid fa-file-lines"></i>
 
             <h3 class="text-xl font-bold mt-6">Record Attendance</h3>
 
             <p class="text-sm text-gray mt-3">Quickly record student library visits and attendance.</p>
-
-            <span class="d-block text-sm font-bold mt-8"> Open Service → </span>
-          </a>
+          </div>
 
           <!-- VIEW REPORTS -->
-          <a
-            href="./pages/dashboard.html"
-            class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md"
-          >
-            <div class="text-40">📊</div>
+          <div class="flex-1 p-8 rounded-xl border-2 border-dark bg-light text-dark shadow-md">
+            <i class="text-40 text-primary fa-solid fa-chart-simple"></i>
 
             <h3 class="text-xl font-bold mt-6">View Reports</h3>
 
             <p class="text-sm text-gray mt-3">Check attendance records and create useful reports.</p>
-
-            <span class="d-block text-sm font-bold mt-8"> Open Service → </span>
-          </a>
+          </div>
         </div>
       </section>
 
       <!--  FEATURES  -->
       <section id="features" class="d-flex flex-wrap border-b border-dark">
-        <article class="flex-1 min-w-256 p-12 text-center border-r border-dark bg-light">
-          <div class="text-40">👤</div>
+        <article class="flex-1 p-12 text-center border-r border-dark bg-light">
+          <i class="text-40 text-primary fa-solid fa-chalkboard-user"></i>
 
           <h3 class="text-lg font-bold mt-5">For Teachers Only</h3>
 
           <p class="text-sm text-gray mt-3">A secure portal exclusively for teachers to manage library attendance.</p>
         </article>
 
-        <article class="flex-1 min-w-256 p-12 text-center border-r border-dark bg-white">
-          <div class="text-40">📋</div>
+        <article class="flex-1 p-12 text-center border-r border-dark bg-white">
+          <i class="text-40 text-primary fa-solid fa-clipboard-list"></i>
 
           <h3 class="text-lg font-bold mt-5">Track Attendance</h3>
 
           <p class="text-sm text-gray mt-3">Easily view and manage student attendance records.</p>
         </article>
 
-        <article class="flex-1 min-w-256 p-12 text-center border-r border-dark bg-light">
-          <div class="text-40">👥</div>
+        <article class="flex-1 p-12 text-center border-r border-dark bg-light">
+          <i class="text-40 text-primary fa-solid fa-server"></i>
 
           <h3 class="text-lg font-bold mt-5">Student Database</h3>
 
           <p class="text-sm text-gray mt-3">Keep student records organized and updated.</p>
         </article>
 
-        <article class="flex-1 min-w-256 p-12 text-center bg-white">
-          <div class="text-40">📊</div>
+        <article class="flex-1 p-12 text-center bg-white">
+          <i class="text-40 text-primary fa-solid fa-file-import"></i>
 
           <h3 class="text-lg font-bold mt-5">Generate Reports</h3>
 
@@ -306,67 +275,55 @@
 
         <div class="d-flex flex-wrap gap-5 mt-10">
           <!-- STEP 1 -->
-          <a
-            href="./auth/sign-in.html"
-            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
-          >
-            <div class="text-32">🔐</div>
+          <div class="flex-1 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md">
+            <i class="text-32 text-primary fa-solid fa-lock"></i>
 
             <p class="text-sm font-bold text-primary mt-4">STEP 01</p>
 
             <h3 class="text-lg font-bold mt-2">Login</h3>
 
             <p class="text-sm text-gray mt-3">Access the teacher portal.</p>
-          </a>
+          </div>
 
           <!-- STEP 2 -->
-          <a
-            href="./pages/students.html"
-            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
-          >
-            <div class="text-32">👥</div>
+          <div class="flex-1 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md">
+            <i class="text-32 text-primary fa-solid fa-users"></i>
 
             <p class="text-sm font-bold text-primary mt-4">STEP 02</p>
 
             <h3 class="text-lg font-bold mt-2">Manage Students</h3>
 
             <p class="text-sm text-gray mt-3">Manage student information.</p>
-          </a>
+          </div>
 
           <!-- STEP 3 -->
-          <a
-            href="./pages/dashboard.html"
-            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
-          >
-            <div class="text-32">☑</div>
+          <div class="flex-1 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md">
+            <i class="text-32 text-primary fa-solid fa-user-check"></i>
 
             <p class="text-sm font-bold text-primary mt-4">STEP 03</p>
 
             <h3 class="text-lg font-bold mt-2">Record Attendance</h3>
 
             <p class="text-sm text-gray mt-3">Record every library visit.</p>
-          </a>
+          </div>
 
           <!-- STEP 4 -->
-          <a
-            href="./pages/dashboard.html"
-            class="flex-1 min-w-192 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md"
-          >
-            <div class="text-32">📄</div>
+          <div class="flex-1 p-6 rounded-xl border-2 border-dark bg-white text-dark shadow-md">
+            <i class="text-32 text-primary fa-solid fa-list-check"></i>
 
             <p class="text-sm font-bold text-primary mt-4">STEP 04</p>
 
             <h3 class="text-lg font-bold mt-2">View Reports</h3>
 
             <p class="text-sm text-gray mt-3">View attendance reports.</p>
-          </a>
+          </div>
         </div>
       </section>
 
       <!--  ABOUT  -->
       <section id="about" class="px-10 py-16 bg-white border-b border-dark">
-        <div class="d-flex items-center flex-wrap gap-10">
-          <div class="flex-1 min-w-320">
+        <div class="d-flex items-start flex-wrap gap-10">
+          <div class="flex-1">
             <p class="text-sm font-bold text-primary mb-2">ABOUT US</p>
 
             <h2 class="text-40 font-bold">Making Library Attendance Simple and Organized.</h2>
@@ -382,8 +339,10 @@
             </p>
           </div>
 
-          <div class="flex-1 min-w-256 p-10 rounded-xl border-2 border-dark bg-light text-center shadow-md">
-            <div class="text-5xl">📚</div>
+          <div class="flex-1 p-10 rounded-xl border-2 border-dark bg-light text-center shadow-md">
+            <div class="p-3 h-320 rounded-md shadow">
+              <img class="w-100 h-100" src="./assets/images/illustrations/reading.svg" alt="" />
+            </div>
 
             <h3 class="text-xl font-bold mt-5">Our Purpose</h3>
 
@@ -403,24 +362,30 @@
         </p>
 
         <div class="d-flex flex-wrap gap-5 mt-10">
-          <div class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-white text-center">
-            <div class="text-40">🏫</div>
+          <div class="flex-1 p-8 rounded-xl border-2 border-dark bg-white text-center">
+            <div class="h-192">
+              <img class="w-100 h-100" src="./assets/images/illustrations/education.svg" alt="" />
+            </div>
 
             <h3 class="text-lg font-bold mt-4">School</h3>
 
             <p class="text-sm text-gray mt-2">Britech College</p>
           </div>
 
-          <div class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-white text-center">
-            <div class="text-40">✉</div>
+          <div class="flex-1 p-8 rounded-xl border-2 border-dark bg-white text-center">
+            <div class="h-192">
+              <img class="w-100 h-100" src="./assets/images/illustrations/email.svg" alt="" />
+            </div>
 
             <h3 class="text-lg font-bold mt-4">Email</h3>
 
             <p class="text-sm text-gray mt-2">library@britech.edu</p>
           </div>
 
-          <div class="flex-1 min-w-256 p-8 rounded-xl border-2 border-dark bg-white text-center">
-            <div class="text-40">📚</div>
+          <div class="flex-1 p-8 rounded-xl border-2 border-dark bg-white text-center">
+            <div class="h-192">
+              <img class="w-100 h-100" src="./assets/images/illustrations/book-lover.svg" alt="" />
+            </div>
 
             <h3 class="text-lg font-bold mt-4">Library</h3>
 
@@ -442,21 +407,17 @@
           </p>
         </div>
 
-        <a href="./auth/sign-in.html" class="px-6 py-4 rounded-md border-2 border-white bg-white text-dark font-bold">
-          Teacher Login →
-        </a>
+        <a href="./auth/sign-in.html" class="btn-accent"> Teacher Login → </a>
       </section>
-    </main>
 
-    <!--  FOOTER  -->
-    <footer class="p-8 bg-white border-t border-dark">
-      <div class="d-flex items-center justify-between flex-wrap gap-4">
-        <p class="text-sm">© 2026 Library Attendance Monitoring System</p>
+      <!--  FOOTER  -->
+      <footer class="p-8 bg-white border-t border-dark">
+        <div class="d-flex items-center justify-between flex-wrap gap-4">
+          <p class="text-sm">© 2026 Library Attendance Monitoring System</p>
 
-        <div class="d-flex gap-5">
-          <a href="#home" class="text-sm text-dark"> Back to top ↑ </a>
+          <a href="#home" class="btn-ghost"> Back to top <span class="fa-solid fa-arrow-up"></span> </a>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
   </body>
 </html>

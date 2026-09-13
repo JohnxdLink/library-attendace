@@ -1,3 +1,13 @@
-.hero-main {
-  padding-top: 80px;
+@import url("../component/buttons/base.css");
+@import url("../layout/header.css");
+@import url("../layout/main-container.css");
+@import url("../component/inputs/base.css");
+@import url("../component/tables/base.css");
+
+.btn-login {
+  color: var(--color-white);
+}
+
+.btn-nav {
+  color: var(--color-white);
 }
