@@ -13,28 +13,36 @@
         <!-- Logo -->
         <div class="d-flex items-center gap-3">
           <div class="w-64 h-auto">
-            <img class="w-100 h-100" src="../assets/images/logo/britech-logo.png" alt="" />
+            <img class="w-100 h-100" src="../assets/images/logo/britech-logo.png" alt="BRITECH Logo" />
           </div>
+
           <div>
             <p class="text-sm font-extrabold text-dark">LIBRARY</p>
             <p class="text-xs text-gray">ATTENDANCE SYSTEM</p>
           </div>
         </div>
 
-        <!-- Navigation item   -->
+        <!-- Navigation -->
         <nav class="mt-8 d-flex flex-1 flex-column gap-2">
-          <a href="./dashboard.html" class="btn-tertiary btn-nav"><span class="fa-solid fa-shapes"></span>Dashboard</a>
+          <!-- Dashboard -->
+          <a href="./dashboard.html" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-shapes"></span>
+            Dashboard
+          </a>
 
+          <!-- Attendance -->
           <a href="#attendance" class="btn-tertiary btn-nav">
             <span class="fa-solid fa-clipboard-user"></span>
             Attendance
           </a>
 
-          <a href="#students" class="btn-tertiary btn-tertiary__is-active btn-nav">
+          <!-- Students -->
+          <a href="./students.html" class="btn-tertiary btn-tertiary__is-active btn-nav">
             <span class="fa-solid fa-users"></span>
             Students
           </a>
 
+          <!-- School -->
           <div class="d-flex flex-column">
             <a id="schoolToggle" href="#school" class="btn-tertiary btn-nav__sub-item">
               <div>
@@ -46,30 +54,62 @@
             </a>
 
             <div id="schoolMenu" class="d-none flex-column">
-              <a class="ml-12 btn-tertiary btn-nav" href="">Year</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="">Strand</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="">Section</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#school-years">School Year</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#grade-strands">Grade & Strand</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#sections">Sections</a>
             </div>
           </div>
 
-          <a href="#records" class="btn-tertiary btn-nav">
-            <span class="fa-solid fa-file-lines"></span>
-            Records
+          <!-- Library -->
+          <div class="d-flex flex-column">
+            <a id="libraryToggle" href="#library" class="btn-tertiary btn-nav__sub-item">
+              <div>
+                <span class="mr-1 fa-solid fa-book-open"></span>
+                Library
+              </div>
+
+              <i id="libraryChevron" class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div id="libraryMenu" class="d-none flex-column">
+              <a class="ml-12 btn-tertiary btn-nav" href="#board-games">Board Games</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#computers">Computers</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#computer-usage">Computer Usage</a>
+            </div>
+          </div>
+
+          <!-- Visitors -->
+          <a href="#visitors" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-person-walking"></span>
+            Visitors
           </a>
 
+          <!-- Staff/Accounts -->
+          <div class="d-flex flex-column">
+            <a id="staffToggle" href="#staff" class="btn-tertiary btn-nav__sub-item">
+              <div>
+                <span class="mr-1 fa-solid fa-user-tie"></span>
+                Staff
+              </div>
+
+              <i id="staffChevron" class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div id="staffMenu" class="d-none flex-column">
+              <a class="ml-12 btn-tertiary btn-nav" href="#staff-list">Staff</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#staff-duties">Staff Duties</a>
+            </div>
+          </div>
+
+          <!-- Reports -->
           <a href="#reports" class="btn-tertiary btn-nav">
-            <span class="fa-solid fa-folder-open"></span>
+            <span class="fa-solid fa-chart-column"></span>
             Reports
-          </a>
-
-          <a href="#settings" class="btn-tertiary btn-nav">
-            <span class="fa-solid fa-gear"></span>
-            Settings
           </a>
         </nav>
 
-        <!--  -->
-        <div class="">
+        <!-- Sign-out -->
+        <div>
           <a href="../index.html" class="w-100 btn-tertiary btn-nav">
             <span class="fa-solid fa-right-to-bracket"></span>
             Sign-out
