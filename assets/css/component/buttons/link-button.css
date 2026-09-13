@@ -49,14 +49,20 @@
   text-decoration: none;
 }
 
+.btn-link__is-active {
+  color: var(--color-dark);
+  background-color: var(--color-primary-50);
+  text-decoration: underline;
+}
+
 /* Loading */
-.btn-link.is-loading {
+.btn-link__is-loading {
   pointer-events: none;
   cursor: wait;
 }
 
 /* Loading Spinner */
-.btn-link.is-loading::before {
+.btn-link__is-loading::before {
   content: "";
   width: var(--space-12);
   height: var(--space-12);
