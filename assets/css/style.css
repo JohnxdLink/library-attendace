@@ -16,3 +16,6 @@
 @import url("./base/position.css");
 @import url("./base/radius.css");
 @import url("./base/z-index.css");
+
+/* Go to this url you can find all icons here: https://fontawesome.com/v6/search?ic=free-collection */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");

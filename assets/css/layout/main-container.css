@@ -1,0 +1,11 @@
+.main-container__h-84 {
+  height: 84dvh;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+.main-container__h-90 {
+  height: 90dvh;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}

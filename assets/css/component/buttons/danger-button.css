@@ -1,0 +1,72 @@
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-20);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-none);
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border: var(--border-thin) solid var(--color-dark);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Hover */
+.btn-danger:hover {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Active */
+.btn-danger:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Focus */
+.btn-danger:focus-visible {
+  outline: var(--border-medium) solid var(--color-dark-50);
+  outline-offset: var(--space-4);
+}
+
+/* Disabled */
+.btn-danger:disabled {
+  color: var(--color-gray);
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Loading */
+.btn-danger.is-loading {
+  pointer-events: none;
+  cursor: wait;
+}
+
+/* Loading Spinner */
+.btn-danger.is-loading::before {
+  content: "";
+  width: var(--space-12);
+  height: var(--space-12);
+  border: var(--border-medium) solid var(--color-white-50);
+  border-top-color: var(--color-white);
+  border-radius: var(--radius-full);
+  animation: btn-danger-spinner 0.7s linear infinite;
+}
+
+@keyframes btn-danger-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

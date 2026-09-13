@@ -1,0 +1,62 @@
+.radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-20);
+  height: var(--space-20);
+  margin: 0;
+  appearance: none;
+  color: var(--color-light);
+  background-color: var(--color-light);
+  border: var(--border-thin) solid var(--color-gray-30);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+/* Hover */
+.radio:hover {
+  border-color: var(--color-gray);
+}
+
+/* Focus */
+.radio:focus-visible {
+  outline: var(--border-medium) solid var(--color-accent-50);
+  outline-offset: var(--space-4);
+}
+
+/* Checked */
+.radio:checked {
+  border-color: var(--color-accent);
+  background-color: var(--color-light);
+}
+
+/* Radio Indicator */
+.radio:checked::before {
+  content: "";
+  width: var(--space-10);
+  height: var(--space-10);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+/* Disabled */
+.radio:disabled {
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Invalid */
+.radio.is-invalid {
+  border-color: var(--color-danger);
+}
+
+/* Invalid Checked */
+.radio.is-invalid:checked::before {
+  background-color: var(--color-danger);
+}

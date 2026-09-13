@@ -1,0 +1,89 @@
+.range {
+  display: block;
+  width: 100%;
+  height: var(--space-4);
+  margin: var(--space-8) 0;
+  appearance: none;
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+/* Track */
+.range::-webkit-slider-runnable-track {
+  height: var(--space-4);
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-full);
+}
+
+.range::-moz-range-track {
+  height: var(--space-4);
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-full);
+}
+
+/* Thumb */
+.range::-webkit-slider-thumb {
+  width: var(--space-20);
+  height: var(--space-20);
+  margin-top: calc(var(--space-8) * -1);
+  appearance: none;
+  background-color: var(--color-accent);
+  border: var(--border-thin) solid var(--color-accent);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.range::-moz-range-thumb {
+  width: var(--space-20);
+  height: var(--space-20);
+  background-color: var(--color-accent);
+  border: var(--border-thin) solid var(--color-accent);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Hover */
+.range:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+.range:hover::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+/* Focus */
+.range:focus-visible {
+  box-shadow: 0 0 0 var(--space-4) var(--color-accent-50);
+}
+
+/* Disabled */
+.range:disabled {
+  background-color: var(--color-light-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.range:disabled::-webkit-slider-thumb {
+  background-color: var(--color-gray);
+  border-color: var(--color-gray);
+  cursor: not-allowed;
+}
+
+.range:disabled::-moz-range-thumb {
+  background-color: var(--color-gray);
+  border-color: var(--color-gray);
+  cursor: not-allowed;
+}

@@ -1,0 +1,91 @@
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-12) var(--space-16);
+  font-family: inherit;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  border: var(--border-thin) solid var(--color-gray-30);
+  border-radius: var(--radius-md);
+  outline: none;
+  cursor: text;
+  user-select: text;
+  resize: vertical;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+/* Placeholder */
+.textarea::placeholder {
+  color: var(--color-gray);
+  opacity: 1;
+}
+
+/* Hover */
+.textarea:hover {
+  border-color: var(--color-gray);
+}
+
+/* Focus */
+.textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 var(--space-4) var(--color-accent-50);
+}
+
+/* Disabled */
+.textarea:disabled {
+  color: var(--color-gray);
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+  cursor: not-allowed;
+  user-select: none;
+  opacity: 0.7;
+}
+
+/* Read Only */
+.textarea:read-only {
+  background-color: var(--color-light-gray);
+  cursor: default;
+}
+
+/* Invalid */
+.textarea.is-invalid {
+  border-color: var(--color-danger);
+}
+
+/* Invalid Focus */
+.textarea.is-invalid:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 var(--space-4) var(--color-danger-50);
+}
+
+/* Valid */
+.textarea.is-valid {
+  border-color: var(--color-success);
+}
+
+/* Valid Focus */
+.textarea.is-valid:focus {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 var(--space-4) var(--color-success-50);
+}
+
+/* Small */
+.textarea--sm {
+  min-height: 80px;
+  padding: var(--space-8) var(--space-12);
+  font-size: var(--font-size-12);
+}
+
+/* Large */
+.textarea--lg {
+  min-height: 180px;
+  padding: var(--space-16) var(--space-20);
+  font-size: var(--font-size-16);
+}

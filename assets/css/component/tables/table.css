@@ -1,0 +1,107 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: var(--font-size-14);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.table thead {
+  background-color: var(--color-primary-50);
+}
+
+.table th {
+  padding: var(--space-12) var(--space-16);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--color-dark);
+  border-bottom: var(--border-thin) solid var(--color-gray-30);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: var(--space-12) var(--space-16);
+  line-height: var(--line-height-normal);
+  border-bottom: var(--border-thin) solid var(--color-gray-30);
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-light-gray);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: var(--color-light-gray);
+}
+
+.table-striped tbody tr:nth-child(even):hover {
+  background-color: var(--color-gray-20);
+}
+
+.table-bordered {
+  border: var(--border-thin) solid var(--color-gray-30);
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: var(--border-thin) solid var(--color-gray-30);
+}
+
+.table-compact th,
+.table-compact td {
+  padding: var(--space-8) var(--space-12);
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table caption {
+  padding: var(--space-12);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  color: var(--color-dark);
+}
+
+.table .text-left {
+  text-align: left;
+}
+
+.table .text-center {
+  text-align: center;
+}
+
+.table .text-right {
+  text-align: right;
+}
+
+.table .row-success {
+  background-color: var(--color-success-50);
+}
+
+.table .row-warning {
+  background-color: var(--color-warning-50);
+}
+
+.table .row-danger {
+  background-color: var(--color-danger-50);
+}
+
+.table tbody tr:focus-within {
+  outline: var(--border-medium) solid var(--color-primary-50);
+  outline-offset: calc(var(--border-medium) * -1);
+}
