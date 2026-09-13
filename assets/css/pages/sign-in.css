@@ -1,0 +1,6 @@
+@import url("../component/inputs/base.css");
+@import url("../component/buttons/base.css");
+
+.btn-sign-in {
+  color: var(--color-white);
+}
