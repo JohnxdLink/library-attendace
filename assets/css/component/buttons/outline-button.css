@@ -49,14 +49,21 @@
   opacity: 0.7;
 }
 
+.btn-outline__is-active {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Loading */
-.btn-outline.is-loading {
+.btn-outline__is-loading {
   pointer-events: none;
   cursor: wait;
 }
 
 /* Loading Spinner */
-.btn-outline.is-loading::before {
+.btn-outline__is-loading::before {
   content: "";
   width: var(--space-12);
   height: var(--space-12);

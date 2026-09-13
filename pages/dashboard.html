@@ -2,486 +2,254 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Dashboard | Library Attendance Monitoring System</title>
-
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css" />
   </head>
 
-  <body class="bg-light">
-    <main class="dashboard-shell px-8 py-8">
-      <section class="bg-white radius-xl shadow-sm overflow-hidden">
-        <div class="d-flex dashboard-main">
-          <!-- SIDEBAR  -->
-
-          <aside class="bg-light p-8 border-r flex-shrink-0 dashboard-sidebar" style="width: 230px">
-            <!-- LOGO / TITLE -->
-
-            <div class="d-flex items-center gap-3 mb-8">
-              <div
-                class="bg-primary text-white radius-md d-flex items-center justify-center"
-                style="width: 42px; height: 42px"
-              >
-                ◈
-              </div>
-
-              <div>
-                <p class="text-sm font-extrabold text-dark">LIBRARY</p>
-
-                <p class="text-xs text-gray">MANAGEMENT</p>
-              </div>
-            </div>
-
-            <!-- NAVIGATION LABEL -->
-
-            <p class="text-xs text-gray font-bold mb-3">MAIN MENU</p>
-
-            <!-- SIDEBAR LINKS -->
-
-            <div class="d-flex flex-column gap-2">
-              <a
-                href="./dashboard.html"
-                class="dashboard-link d-flex items-center gap-3 p-3 radius-md bg-primary text-white text-xs font-bold"
-              >
-                <span>⌂</span>
-                DASHBOARD
-              </a>
-
-              <a
-                href="#attendance"
-                class="dashboard-link d-flex items-center gap-3 p-3 radius-md text-xs font-semibold"
-              >
-                <span>☑</span>
-                ATTENDANCE
-              </a>
-
-              <a href="#students" class="dashboard-link d-flex items-center gap-3 p-3 radius-md text-xs font-semibold">
-                <span>♧</span>
-                STUDENTS
-              </a>
-
-              <a href="#records" class="dashboard-link d-flex items-center gap-3 p-3 radius-md text-xs font-semibold">
-                <span>▣</span>
-                RECORDS
-              </a>
-
-              <a href="#reports" class="dashboard-link d-flex items-center gap-3 p-3 radius-md text-xs font-semibold">
-                <span>▤</span>
-                REPORTS
-              </a>
-
-              <a href="#settings" class="dashboard-link d-flex items-center gap-3 p-3 radius-md text-xs font-semibold">
-                <span>⚙</span>
-                SETTINGS
-              </a>
-            </div>
-
-            <!-- SIDEBAR BOTTOM -->
-
-            <div class="mt-10 pt-6 border-t">
-              <p class="text-xs text-gray font-bold mb-3">SYSTEM</p>
-
-              <div class="bg-white radius-lg border p-4">
-                <p class="text-xs font-bold text-dark">Library Portal</p>
-
-                <p class="text-xs text-gray mt-2">Teacher access only</p>
-
-                <div class="d-flex items-center gap-2 mt-3">
-                  <span class="bg-primary radius-full" style="width: 8px; height: 8px"></span>
-
-                  <span class="text-xs text-gray"> System Online </span>
-                </div>
-              </div>
-            </div>
-          </aside>
-
-          <!-- MAIN CONTENT  -->
-
-          <div class="flex-1 dashboard-content">
-            <div class="p-8">
-              <!-- HEADER  -->
-
-              <header class="d-flex items-center justify-between gap-5 mb-8">
-                <div>
-                  <p class="text-xs text-primary font-bold">LIBRARY MANAGEMENT SYSTEM</p>
-
-                  <h1 class="text-32 font-extrabold mt-2">Dashboard</h1>
-
-                  <p class="text-sm text-gray mt-2">Monitor library attendance and student activity.</p>
-                </div>
-
-                <!-- DATE -->
-
-                <div class="bg-light border radius-lg px-5 py-4">
-                  <p class="text-xs text-gray font-bold">TODAY</p>
-
-                  <strong id="todayDate" class="text-sm font-bold text-dark d-block mt-2"> Loading... </strong>
-                </div>
-              </header>
-
-              <!-- =========================
-                   WELCOME CARD
-              ========================== -->
-
-              <section>
-                <div class="d-flex items-center justify-between gap-5">
-                  <div>
-                    <p class="text-xs text-white font-bold">TEACHER PORTAL</p>
-
-                    <h2 class="text-2xl font-extrabold text-white mt-2">Welcome to the Library Dashboard</h2>
-
-                    <p class="text-sm text-white mt-2" style="opacity: 0.85">
-                      Keep track of student visits, attendance, and library records in one place.
-                    </p>
-                  </div>
-                </div>
-              </section>
-
-              <!-- =========================
-                  STATISTICS
-              ========================== -->
-
-              <section class="d-grid gap-4 stats-grid">
-                <!-- VISITORS -->
-
-                <article
-                  class="stat-card bg-white border radius-xl p-5 shadow-sm"
-                  style="border-top: 4px solid var(--color-primary)"
-                >
-                  <div class="d-flex items-center justify-between mb-5">
-                    <div class="stat-icon bg-light text-primary radius-lg d-flex items-center justify-center">♧</div>
-
-                    <span class="text-xs text-primary font-bold"> TODAY </span>
-                  </div>
-
-                  <p class="text-xs text-gray font-semibold">TOTAL VISITORS</p>
-
-                  <h2 class="text-32 font-extrabold mt-2">128</h2>
-
-                  <p class="text-xs text-gray mt-2">Total library visits</p>
-                </article>
-
-                <!-- CHECKED IN -->
-
-                <article
-                  class="stat-card bg-white border radius-xl p-5 shadow-sm"
-                  style="border-top: 4px solid var(--color-secondary)"
-                >
-                  <div class="d-flex items-center justify-between mb-5">
-                    <div class="stat-icon bg-light text-secondary radius-lg d-flex items-center justify-center">✓</div>
-
-                    <span class="text-xs text-secondary font-bold"> LIVE </span>
-                  </div>
-
-                  <p class="text-xs text-gray font-semibold">CHECKED IN</p>
-
-                  <h2 class="text-32 font-extrabold mt-2">76</h2>
-
-                  <p class="text-xs text-gray mt-2">Currently inside</p>
-                </article>
-
-                <!-- CHECKED OUT -->
-
-                <article
-                  class="stat-card bg-white border radius-xl p-5 shadow-sm"
-                  style="border-top: 4px solid var(--color-accent)"
-                >
-                  <div class="d-flex items-center justify-between mb-5">
-                    <div class="stat-icon bg-light text-accent radius-lg d-flex items-center justify-center">↪</div>
-
-                    <span class="text-xs text-accent font-bold"> TODAY </span>
-                  </div>
-
-                  <p class="text-xs text-gray font-semibold">CHECKED OUT</p>
-
-                  <h2 class="text-32 font-extrabold mt-2">52</h2>
-
-                  <p class="text-xs text-gray mt-2">Completed visits</p>
-                </article>
-
-                <!-- AVERAGE -->
-
-                <article
-                  class="stat-card bg-white border radius-xl p-5 shadow-sm"
-                  style="border-top: 4px solid var(--color-dark)"
-                >
-                  <div class="d-flex items-center justify-between mb-5">
-                    <div class="stat-icon bg-light text-dark radius-lg d-flex items-center justify-center">≈</div>
-
-                    <span class="text-xs text-gray font-bold"> DAILY </span>
-                  </div>
-
-                  <p class="text-xs text-gray font-semibold">AVERAGE</p>
-
-                  <h2 class="text-32 font-extrabold mt-2">104</h2>
-
-                  <p class="text-xs text-gray mt-2">Daily visitors</p>
-                </article>
-              </section>
-
-              <!-- =========================
-                   GRAPH + RECENT ATTENDANCE
-              ========================== -->
-
-              <section class="d-grid gap-5 mt-6 main-grid">
-                <!-- GRAPH -->
-
-                <article class="bg-white border radius-xl shadow-sm overflow-hidden">
-                  <div class="d-flex items-center justify-between p-5 border-b">
-                    <div>
-                      <p class="text-xs text-primary font-bold">ATTENDANCE ACTIVITY</p>
-
-                      <h2 class="text-16 font-bold mt-2">Visitors Over Time</h2>
-                    </div>
-
-                    <span class="bg-light text-primary radius-full px-3 py-2 text-xs font-bold"> TODAY </span>
-                  </div>
-
-                  <div class="p-6">
-                    <div class="d-flex justify-between text-xs text-gray mb-3">
-                      <span>VISITORS</span>
-                      <span>8 AM — 1 PM</span>
-                    </div>
-
-                    <svg viewBox="0 0 700 300" width="100%" height="300" preserveAspectRatio="none">
-                      <!-- GRID -->
-
-                      <line x1="35" y1="40" x2="680" y2="40" stroke="currentColor" opacity=".08" />
-
-                      <line x1="35" y1="90" x2="680" y2="90" stroke="currentColor" opacity=".08" />
-
-                      <line x1="35" y1="140" x2="680" y2="140" stroke="currentColor" opacity=".08" />
-
-                      <line x1="35" y1="190" x2="680" y2="190" stroke="currentColor" opacity=".08" />
-
-                      <line x1="35" y1="240" x2="680" y2="240" stroke="currentColor" opacity=".08" />
-
-                      <!-- LINE -->
-
-                      <polyline
-                        points="
-                          35,235
-                          135,135
-                          235,195
-                          335,70
-                          435,145
-                          535,100
-                          675,30
-                        "
-                        fill="none"
-                        stroke="var(--color-primary)"
-                        stroke-width="5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-
-                      <!-- POINTS -->
-
-                      <circle cx="35" cy="235" r="7" fill="var(--color-primary)" />
-
-                      <circle cx="135" cy="135" r="7" fill="var(--color-primary)" />
-
-                      <circle cx="235" cy="195" r="7" fill="var(--color-primary)" />
-
-                      <circle cx="335" cy="70" r="7" fill="var(--color-primary)" />
-
-                      <circle cx="435" cy="145" r="7" fill="var(--color-primary)" />
-
-                      <circle cx="535" cy="100" r="7" fill="var(--color-primary)" />
-
-                      <circle cx="675" cy="30" r="7" fill="var(--color-primary)" />
-                    </svg>
-
-                    <!-- TIME -->
-
-                    <div class="d-flex justify-between text-xs text-gray mt-2">
-                      <span>8 AM</span>
-                      <span>9 AM</span>
-                      <span>10 AM</span>
-                      <span>11 AM</span>
-                      <span>12 NN</span>
-                      <span>1 PM</span>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- RECENT ATTENDANCE -->
-
-                <article class="bg-white border radius-xl shadow-sm overflow-hidden">
-                  <div class="d-flex items-center justify-between p-5 border-b">
-                    <div>
-                      <p class="text-xs text-primary font-bold">ACTIVITY</p>
-
-                      <h2 class="text-16 font-bold mt-2">Recent Attendance</h2>
-                    </div>
-
-                    <span class="text-xs text-gray"> TODAY </span>
-                  </div>
-
-                  <div class="overflow-auto">
-                    <table class="w-100">
-                      <thead>
-                        <tr class="bg-light">
-                          <th class="p-3 text-xs font-bold text-left border-b">STUDENT</th>
-
-                          <th class="p-3 text-xs font-bold text-left border-b">STATUS</th>
-
-                          <th class="p-3 text-xs font-bold text-left border-b">TIME</th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        <tr>
-                          <td class="p-3 text-xs font-semibold border-b">Kersey</td>
-
-                          <td class="p-3 text-xs border-b">
-                            <span class="bg-light text-primary radius-full px-2 py-1 font-bold"> IN </span>
-                          </td>
-
-                          <td class="p-3 text-xs border-b">8:05 AM</td>
-                        </tr>
-
-                        <tr>
-                          <td class="p-3 text-xs font-semibold border-b">Regie</td>
-
-                          <td class="p-3 text-xs border-b">
-                            <span class="bg-light text-primary radius-full px-2 py-1 font-bold"> IN </span>
-                          </td>
-
-                          <td class="p-3 text-xs border-b">8:07 AM</td>
-                        </tr>
-
-                        <tr>
-                          <td class="p-3 text-xs font-semibold border-b">Allaiza</td>
-
-                          <td class="p-3 text-xs border-b">
-                            <span class="bg-light text-accent radius-full px-2 py-1 font-bold"> OUT </span>
-                          </td>
-
-                          <td class="p-3 text-xs border-b">9:10 AM</td>
-                        </tr>
-
-                        <tr>
-                          <td class="p-3 text-xs font-semibold border-b">Shane</td>
-
-                          <td class="p-3 text-xs border-b">
-                            <span class="bg-light text-primary radius-full px-2 py-1 font-bold"> IN </span>
-                          </td>
-
-                          <td class="p-3 text-xs border-b">9:44 AM</td>
-                        </tr>
-
-                        <tr>
-                          <td class="p-3 text-xs font-semibold border-b">Luke</td>
-
-                          <td class="p-3 text-xs border-b">
-                            <span class="bg-light text-primary radius-full px-2 py-1 font-bold"> IN </span>
-                          </td>
-
-                          <td class="p-3 text-xs border-b">10:23 AM</td>
-                        </tr>
-
-                        <tr>
-                          <td class="p-3 text-xs font-semibold">Jhon Paul</td>
-
-                          <td class="p-3 text-xs">
-                            <span class="bg-light text-accent radius-full px-2 py-1 font-bold"> OUT </span>
-                          </td>
-
-                          <td class="p-3 text-xs">10:30 AM</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </article>
-              </section>
-
-              <!-- =========================
-                   QUICK ACTIONS
-              ========================== -->
-
-              <section class="mt-8">
-                <div class="mb-4">
-                  <p class="text-xs text-primary font-bold">QUICK ACCESS</p>
-
-                  <h2 class="text-16 font-bold mt-2">Manage Library</h2>
-                </div>
-
-                <div class="d-grid gap-4 quick-grid">
-                  <!-- STUDENTS -->
-
-                  <a
-                    href="#students"
-                    class="quick-card d-flex items-center gap-4 bg-primary text-white radius-xl p-5 shadow"
-                  >
-                    <div class="action-icon d-flex items-center justify-center radius-full bg-white text-primary">
-                      ♧
-                    </div>
-
-                    <div>
-                      <p class="text-sm font-bold">STUDENTS</p>
-
-                      <p class="text-xs mt-1" style="opacity: 0.8">Manage student records</p>
-                    </div>
-                  </a>
-
-                  <!-- ATTENDANCE -->
-
-                  <a
-                    href="#attendance"
-                    class="quick-card d-flex items-center gap-4 bg-white border border-primary radius-xl p-5 shadow-sm"
-                  >
-                    <div class="action-icon d-flex items-center justify-center radius-full bg-light text-primary">
-                      ✓
-                    </div>
-
-                    <div>
-                      <p class="text-sm font-bold">ATTENDANCE</p>
-
-                      <p class="text-xs text-gray mt-1">Record library visits</p>
-                    </div>
-                  </a>
-
-                  <!-- REPORTS -->
-
-                  <a
-                    href="#reports"
-                    class="quick-card d-flex items-center gap-4 bg-white border radius-xl p-5 shadow-sm"
-                  >
-                    <div class="action-icon d-flex items-center justify-center radius-full bg-light text-primary">
-                      ▤
-                    </div>
-
-                    <div>
-                      <p class="text-sm font-bold">REPORTS</p>
-
-                      <p class="text-xs text-gray mt-1">View attendance reports</p>
-                    </div>
-                  </a>
-                </div>
-              </section>
-            </div>
+  <body class="w-screen h-screen d-flex flex-row bg-light">
+    <aside class="pl-5 py-10 w-384">
+      <div class="pr-5 h-100 d-flex flex-column border-light-gray border-r">
+        <!-- Logo -->
+        <div class="d-flex items-center gap-3">
+          <div class="w-64 h-auto">
+            <img class="w-100 h-100" src="../assets/images/logo/britech-logo.png" alt="" />
+          </div>
+          <div>
+            <p class="text-sm font-extrabold text-dark">LIBRARY</p>
+            <p class="text-xs text-gray">ATTENDANCE SYSTEM</p>
           </div>
         </div>
-      </section>
 
-      <!-- =========================
-           FOOTER
-      ========================== -->
+        <!-- Navigation item   -->
+        <nav class="mt-8 d-flex flex-1 flex-column gap-2">
+          <a href="./dashboard.html" class="btn-tertiary btn-tertiary__is-active btn-nav"
+            ><span class="fa-solid fa-shapes"></span>Dashboard</a
+          >
 
-      <footer class="d-flex items-center justify-between gap-5 bg-white border-t p-6 mt-6">
-        <p class="text-xs text-gray">2026 Library Attendance Monitoring System. All rights reserved.</p>
+          <a href="#attendance" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-clipboard-user"></span>
+            Attendance
+          </a>
 
-        <div class="d-flex gap-4">
-          <a href="" class="text-xs font-semibold"> Privacy Policy </a>
+          <a href="./students.html" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-users"></span>
+            Students
+          </a>
 
-          <a href="" class="text-xs font-semibold"> Terms of Use </a>
+          <div class="d-flex flex-column">
+            <a id="schoolToggle" href="#school" class="btn-tertiary btn-nav__sub-item">
+              <div>
+                <span class="mr-1 fa-solid fa-school"></span>
+                School
+              </div>
+
+              <i id="schoolChevron" class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div id="schoolMenu" class="d-none flex-column">
+              <a class="ml-12 btn-tertiary btn-nav" href="">Year</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="">Strand</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="">Section</a>
+            </div>
+          </div>
+
+          <a href="#records" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-file-lines"></span>
+            Records
+          </a>
+
+          <a href="#reports" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-folder-open"></span>
+            Reports
+          </a>
+
+          <a href="#settings" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-gear"></span>
+            Settings
+          </a>
+        </nav>
+
+        <!--  -->
+        <div class="">
+          <a href="../index.html" class="w-100 btn-tertiary btn-nav">
+            <span class="fa-solid fa-right-to-bracket"></span>
+            Sign-out
+          </a>
         </div>
-      </footer>
-    </main>
+      </div>
+    </aside>
 
-    <script src="../assets/js/pages/dashboard.js"></script>
+    <!-- Main container -->
+    <div class="w-100 h-screen">
+      <header class="px-10 pt-10 border-b border-light-gray header__h-18">
+        <div class="mb-2 d-flex gap-2">
+          <h1 class="text-lg" id="greeting"></h1>
+          <h1 class="text-lg">Juan dela Cruz</h1>
+        </div>
+        <div class="d-flex items-center justify-between">
+          <div>
+            <h1 class="text-32 font-extrabold">Dashboard</h1>
+            <p class="text-sm text-gray mt-2">Monitor library attendance and student activity.</p>
+          </div>
+
+          <!-- DATE -->
+          <div class="bg-light border radius-md px-5 py-4">
+            <p class="text-xs text-gray font-bold">TODAY</p>
+            <h1 id="todayDate" class="mt-1 text-sm font-bold text-dark d-block">Loading...</h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-10 d-flex flex-column gap-5 main-container__h-77">
+        <section class="d-flex flex-row gap-4">
+          <!-- VISITORS -->
+          <article class="flex-1 bg-white border radius-xl p-5 shadow-sm stat-card visitors">
+            <div class="d-flex items-center justify-between mb-5">
+              <div class="stat-icon bg-light text-primary radius-lg d-flex items-center justify-center">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <span class="text-xs text-primary font-bold">TODAY</span>
+            </div>
+
+            <p class="text-xs text-gray font-semibold">TOTAL VISITORS</p>
+            <h2 class="text-32 font-extrabold mt-2">128</h2>
+            <p class="text-xs text-gray mt-2">Total library visits</p>
+          </article>
+
+          <!-- CHECKED IN -->
+          <article class="flex-1 stat-card bg-white border radius-xl p-5 shadow-sm time-in">
+            <div class="d-flex items-center justify-between mb-5">
+              <div class="stat-icon bg-light text-secondary radius-lg d-flex items-center justify-center">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <span class="text-xs text-secondary font-bold">LIVE</span>
+            </div>
+
+            <p class="text-xs text-gray font-semibold">TIME IN</p>
+            <h2 class="text-32 font-extrabold mt-2">76</h2>
+            <p class="text-xs text-gray mt-2">Currently inside</p>
+          </article>
+
+          <!-- CHECKED OUT -->
+          <article class="flex-1 stat-card bg-white border radius-xl p-5 shadow-sm time-out">
+            <div class="d-flex items-center justify-between mb-5">
+              <div class="stat-icon bg-light text-accent radius-lg d-flex items-center justify-center">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </div>
+
+              <span class="text-xs text-accent font-bold">TODAY</span>
+            </div>
+
+            <p class="text-xs text-gray font-semibold">TIME OUT</p>
+            <h2 class="text-32 font-extrabold mt-2">52</h2>
+            <p class="text-xs text-gray mt-2">Completed visits</p>
+          </article>
+
+          <!-- AVERAGE -->
+          <article class="flex-1 stat-card bg-white border radius-xl p-5 shadow-sm average">
+            <div class="d-flex items-center justify-between mb-5">
+              <div class="stat-icon bg-light text-dark radius-lg d-flex items-center justify-center">
+                <i class="fa-solid fa-wave-square"></i>
+              </div>
+
+              <span class="text-xs text-gray font-bold">DAILY</span>
+            </div>
+
+            <p class="text-xs text-gray font-semibold">AVERAGE</p>
+            <h2 class="text-32 font-extrabold mt-2">104</h2>
+            <p class="text-xs text-gray mt-2">Daily visitors</p>
+          </article>
+        </section>
+
+        <section class="d-flex flex-row gap-4">
+          <article class="flex-1 h-512 bg-white rounded-lg border">
+            <div class="d-flex items-center justify-between p-5 border-b">
+              <div>
+                <p class="text-xs text-primary font-bold">ATTENDANCE ACTIVITY</p>
+                <h1 class="text-16 font-bold mt-2">Visitors Over Time</h1>
+              </div>
+              <p class="bg-light text-primary radius-full px-3 py-2 text-xs font-bold">TODAY</p>
+            </div>
+
+            <div class="d-flex flex-column justify-center items-center">
+              <p class="mt-12 text-gray">Coming Soon</p>
+            </div>
+          </article>
+
+          <article class="flex-1 h-512 bg-white rounded-lg border overflow-hidden">
+            <div class="d-flex items-center justify-between p-5 border-b">
+              <div>
+                <p class="text-xs text-primary font-bold">STUDENTS</p>
+                <h2 class="text-16 font-bold mt-2">Recent Attendance</h2>
+              </div>
+
+              <p class="bg-light text-primary radius-full px-3 py-2 text-xs font-bold">TODAY</p>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center">Student</th>
+                    <th class="text-center">Grade</th>
+                    <th class="text-center">Section</th>
+                    <th class="text-center">Time In</th>
+                    <th class="text-center">Time Out</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Regie Carl Arena</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">8:15 AM</td>
+                    <td class="text-center">—</td>
+                  </tr>
+
+                  <tr>
+                    <td>Luke de Leon</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">8:32 AM</td>
+                    <td class="text-center">10:15 AM</td>
+                  </tr>
+
+                  <tr>
+                    <td>Allaiza Maglasang</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">9:04 AM</td>
+                    <td class="text-center">—</td>
+                  </tr>
+                  <tr>
+                    <td>Allaiza Maglasang</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">9:04 AM</td>
+                    <td class="text-center">—</td>
+                  </tr>
+                  <tr>
+                    <td>Allaiza Maglasang</td>
+                    <td class="text-center">Grade 12</td>
+                    <td class="text-center">Alcaraz</td>
+                    <td class="text-center">9:04 AM</td>
+                    <td class="text-center">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="pl-10 d-flex flex-row items-center footer__h-5">
+        <p class="text-xs text-gray">2026 Library Attendance Monitoring System. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/pages/dashboard.js"></script>
 </html>

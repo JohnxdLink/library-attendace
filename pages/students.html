@@ -3,9 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Library | Student</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/pages/students.css" />
   </head>
-  <body>
-    <h1>Student Page</h1>
+  <body class="w-screen h-screen d-flex flex-row bg-light">
+    <aside class="pl-5 py-10 w-384">
+      <div class="pr-5 h-100 d-flex flex-column border-light-gray border-r">
+        <!-- Logo -->
+        <div class="d-flex items-center gap-3">
+          <div class="w-64 h-auto">
+            <img class="w-100 h-100" src="../assets/images/logo/britech-logo.png" alt="" />
+          </div>
+          <div>
+            <p class="text-sm font-extrabold text-dark">LIBRARY</p>
+            <p class="text-xs text-gray">ATTENDANCE SYSTEM</p>
+          </div>
+        </div>
+
+        <!-- Navigation item   -->
+        <nav class="mt-8 d-flex flex-1 flex-column gap-2">
+          <a href="./dashboard.html" class="btn-tertiary btn-nav"><span class="fa-solid fa-shapes"></span>Dashboard</a>
+
+          <a href="#attendance" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-clipboard-user"></span>
+            Attendance
+          </a>
+
+          <a href="#students" class="btn-tertiary btn-tertiary__is-active btn-nav">
+            <span class="fa-solid fa-users"></span>
+            Students
+          </a>
+
+          <div class="d-flex flex-column">
+            <a id="schoolToggle" href="#school" class="btn-tertiary btn-nav__sub-item">
+              <div>
+                <span class="mr-1 fa-solid fa-school"></span>
+                School
+              </div>
+
+              <i id="schoolChevron" class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div id="schoolMenu" class="d-none flex-column">
+              <a class="ml-12 btn-tertiary btn-nav" href="">Year</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="">Strand</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="">Section</a>
+            </div>
+          </div>
+
+          <a href="#records" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-file-lines"></span>
+            Records
+          </a>
+
+          <a href="#reports" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-folder-open"></span>
+            Reports
+          </a>
+
+          <a href="#settings" class="btn-tertiary btn-nav">
+            <span class="fa-solid fa-gear"></span>
+            Settings
+          </a>
+        </nav>
+
+        <!--  -->
+        <div class="">
+          <a href="../index.html" class="w-100 btn-tertiary btn-nav">
+            <span class="fa-solid fa-right-to-bracket"></span>
+            Sign-out
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main container -->
+    <div class="w-100 h-screen">
+      <header class="px-10 pt-10 border-b border-light-gray header__h-18">
+        <div class="mb-2 d-flex gap-2">
+          <h1 class="text-lg" id="greeting"></h1>
+          <h1 class="text-lg">Juan dela Cruz</h1>
+        </div>
+        <div class="d-flex items-center justify-between">
+          <div>
+            <h1 class="text-32 font-extrabold">Students</h1>
+            <p class="text-sm text-gray mt-2">Monitor library attendance and student activity.</p>
+          </div>
+
+          <!-- DATE -->
+          <div class="bg-light border radius-md px-5 py-4">
+            <p class="text-xs text-gray font-bold">TODAY</p>
+            <h1 id="todayDate" class="mt-1 text-sm font-bold text-dark d-block">Loading...</h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-10 d-flex flex-column gap-5 main-container__h-77"></main>
+
+      <footer class="pl-10 d-flex flex-row items-center footer__h-5">
+        <p class="text-xs text-gray">2026 Library Attendance Monitoring System. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
+  <script type="module" src="../assets/js/main.js"></script>
 </html>
