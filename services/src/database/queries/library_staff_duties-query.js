@@ -14,7 +14,7 @@ const FIND_ALL_LIBRARY_STAFF_DUTIES = `
     lsd.time_out,
     lsd.remarks,
     lsd.created_at,
-    lsd.updated_at,
+    lsd.updated_at
   FROM library_staff_duties AS lsd
   ORDER BY lsd.id DESC
 `;
@@ -29,7 +29,7 @@ const FIND_LIBRARY_STAFF_DUTIES_BY_ID = `
     lsd.time_out,
     lsd.remarks,
     lsd.created_at,
-    lsd.updated_at,
+    lsd.updated_at
   FROM library_staff_duties AS lsd
   WHERE lsd.id = ?
 `;
@@ -44,7 +44,7 @@ const UPDATE_LIBRARY_STAFF_DUTIES = `
     lsd.time_out = ?,
     lsd.remarks = ?,
     lsd.created_at = ?,
-    lsd.updated_at = ?,
+    lsd.updated_at = ?
   WHERE lsd.id = ?
 `;
 

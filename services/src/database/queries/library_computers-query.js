@@ -11,7 +11,7 @@ const FIND_ALL_LIBRARY_COMPUTER = `
     lc.computer_number,
     lc.status,
     lc.created_at,
-    lc.updated_at,
+    lc.updated_at
   FROM library_computer AS lc
   ORDER BY lc.id DESC
 `;
@@ -23,7 +23,7 @@ const FIND_LIBRARY_COMPUTER_BY_ID = `
     lc.computer_number,
     lc.status,
     lc.created_at,
-    lc.updated_at,
+    lc.updated_at
   FROM library_computer AS lc
   WHERE lc.id = ?
 `;
@@ -35,7 +35,7 @@ const UPDATE_LIBRARY_COMPUTER = `
     lc.computer_number = ?,
     lc.status = ?,
     lc.created_at = ?,
-    lc.updated_at = ?,
+    lc.updated_at = ?
   WHERE lc.id = ?
 `;
 

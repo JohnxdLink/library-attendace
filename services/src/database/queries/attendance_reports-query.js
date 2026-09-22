@@ -17,13 +17,13 @@ const FIND_ALL_ATTENDANCE_REPORTS = `
     ar.report_date,
     ar.action_taken,
     ar.created_at,
-    ar.updated_at,
+    ar.updated_at
   FROM attendance_reports AS ar
   ORDER BY ar.id DESC
 `;
 
 // READ - Get record by ID
-const FIND_ATTENDANCE_REPORTS__BY_ID = `
+const FIND_ATTENDANCE_REPORTS_BY_ID = `
   SELECT
     ar.id,
     ar.student_id,
@@ -35,7 +35,7 @@ const FIND_ATTENDANCE_REPORTS__BY_ID = `
     ar.report_date,
     ar.action_taken,
     ar.created_at,
-    ar.updated_at,
+    ar.updated_at
   FROM attendance_reports AS ar
   WHERE ar.id = ?
 `;
@@ -51,7 +51,7 @@ const UPDATE_ATTENDANCE_REPORTS = `
     ar.description = ?,
     ar.status = ?,
     ar.report_date = ?,
-    ar.action_taken = ?,
+    ar.action_taken = ?
   WHERE ar.id = ?
 `;
 

@@ -39,7 +39,7 @@ const UPDATE_BOARD_GAME = `
     bg.game_name = ?,
     bg.description = ?,
     bg.quantity = ?,
-    bg.status = ?,
+    bg.status = ?
   WHERE bg.id = ?
 `;
 

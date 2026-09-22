@@ -15,7 +15,7 @@ const FIND_ALL_LIBRARY_COMPUTER_USAGES = `
     lcu.time_out,
     lcu.purpose,
     lcu.created_at,
-    lcu.updated_at,
+    lcu.updated_at
   FROM library_computer_usages AS lcu
   ORDER BY lcu.id DESC
 `;
@@ -31,7 +31,7 @@ const FIND_LIBRARY_COMPUTER_USAGES_BY_ID = `
     lcu.time_out,
     lcu.purpose,
     lcu.created_at,
-    lcu.updated_at,
+    lcu.updated_at
   FROM library_computer_usages AS lcu
   WHERE lcu.id = ?
 `;
@@ -47,7 +47,7 @@ const UPDATE_LIBRARY_COMPUTER_USAGES = `
     lcu.time_out = ?,
     lcu.purpose = ?,
     lcu.created_at = ?,
-    lcu.updated_at = ?,
+    lcu.updated_at = ?
   WHERE lcu.id = ?
 `;
 

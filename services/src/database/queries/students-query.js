@@ -1,7 +1,7 @@
 // CREATE
 const CREATE_LIBRARY_COMPUTER_USAGES = `
   INSERT INTO attendance_reports (grade_section_id, account_id, lastname, firstname, middlename, contact_no, created_at, updated_at,)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?,)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 `;
 
 // READ - Get all records
@@ -15,7 +15,7 @@ const FIND_ALL_STUDENTS = `
     s.middlename,
     s.contact_no,
     s.created_at,
-    s.updated_at,
+    s.updated_at
   FROM students AS s
   ORDER BY s.id DESC
 `;
@@ -31,7 +31,7 @@ const FIND_STUDENTS_BY_ID = `
     s.middlename,
     s.contact_no,
     s.created_at,
-    s.updated_at,
+    s.updated_at
   FROM students AS s
   WHERE s.id = ?
 `;
@@ -47,7 +47,7 @@ const UPDATE_STUDENTS = `
     s.middlename = ?,
     s.contact_no = ?,
     s.created_at = ?,
-    s.updated_at = ?,
+    s.updated_at = ?
   WHERE s.id = ?
 `;
 

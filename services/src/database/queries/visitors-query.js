@@ -18,7 +18,7 @@ const FIND_ALL_VISITORS = `
     v.visit_date,
     v.remarks,
     v.created_at,
-    v.updated_at,
+    v.updated_at
   FROM visitors AS v
   ORDER BY v.id DESC
 `;
@@ -37,7 +37,7 @@ const FIND_VISITORS_BY_ID = `
     v.visit_date,
     v.remarks,
     v.created_at,
-    v.updated_at,
+    v.updated_at
   FROM visitors AS v
   WHERE v.id = ?
 `;
@@ -56,7 +56,7 @@ const UPDATE_VISITORS = `
     v.visit_date = ?,
     v.remarks = ?,
     v.created_at = ?,
-    v.updated_at = ?,
+    v.updated_at = ?
   WHERE v.id = ?
 `;
 
