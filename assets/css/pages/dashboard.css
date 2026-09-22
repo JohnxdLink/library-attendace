@@ -1,16 +1,4 @@
-@import url("../component/buttons/base.css");
-@import url("../component//tables/base.css");
-@import url("../layout/header.css");
-@import url("../layout/footer.css");
-@import url("../layout/main-container.css");
-
-.btn-nav {
-  justify-content: start;
-}
-
-.btn-nav__sub-item {
-  justify-content: space-between;
-}
+@import url("./common.css");
 
 .visitors {
   border-top: 4px solid var(--color-primary);
