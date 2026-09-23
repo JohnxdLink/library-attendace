@@ -1,67 +1,104 @@
 const db = require("../config/database.js");
 const {
-  CREATE_LIBRARY_STAFF_DUTIES,
-  FIND_ALL_LIBRARY_STAFF_DUTIES,
-  FIND_LIBRARY_STAFF_DUTIES_BY_ID,
-  UPDATE_LIBRARY_STAFF_DUTIES,
-  DELETE_LIBRARY_STAFF_DUTIES,
-} = require("../database/queries/library_staff_duties-query.js");
+  CREATE_STUDENTS,
+  FIND_ALL_STUDENTS,
+  FIND_STUDENTS_BY_ID,
+  UPDATE_STUDENTS,
+  DELETE_STUDENTS,
+} = require("../database/queries/students-query.js");
 
 // CREATE
-const createLibraryStaffDuty = async (staff_id, duty_date, time_in, time_out, remarks) => {
-  if (!staff_id || !duty_date || !time_in) {
-    throw new Error("Staff ID, duty date, and time in are required.");
+const createStudents = async (
+  grade_section_id,
+  account_id,
+  lastname,
+  firstname,
+  middlename,
+  contact_no,
+  created_at,
+  updated_at,
+) => {
+  if (!grade_section_id || !account_id || !contact_no) {
+    throw new Error("Grade section id, account id, and contact no are required.");
   }
 
-  const [result] = await db.query(CREATE_LIBRARY_STAFF_DUTIES, [staff_id, duty_date, time_in, time_out, remarks]);
+  const [result] = await db.query(CREATE_STUDENTS, [
+    grade_section_id,
+    account_id,
+    lastname,
+    firstname,
+    middlename,
+    contact_no,
+    created_at,
+    updated_at,
+  ]);
 
   return result;
 };
 
 // READ - Get all library staff duties
-const findAllLibraryStaffDuties = async () => {
-  const [rows] = await db.query(FIND_ALL_LIBRARY_STAFF_DUTIES);
+const findAllStudents = async () => {
+  const [rows] = await db.query(FIND_ALL_STUDENTS);
 
   return rows;
 };
 
 // READ - Get library staff duty by ID
-const findLibraryStaffDutyById = async (id) => {
+const findStudentsById = async (id) => {
   if (!id) {
-    throw new Error("Library Staff Duty ID is required.");
+    throw new Error("Students ID is required.");
   }
 
-  const [rows] = await db.query(FIND_LIBRARY_STAFF_DUTIES_BY_ID, [id]);
+  const [rows] = await db.query(FIND_STUDENTS_BY_ID, [id]);
 
   return rows[0] || null;
 };
 
 // UPDATE
-const updateLibraryStaffDuty = async (id, staff_id, duty_date, time_in, time_out, remarks) => {
-  if (!id || !staff_id || !duty_date || !time_in) {
-    throw new Error("Library Staff Duty ID, staff ID, duty date, and time in are required.");
+const updateStudents = async (
+  id,
+  grade_section_id,
+  account_id,
+  lastname,
+  middlename,
+  contact_no,
+  created_at,
+  updated_at,
+) => {
+  if (!id || !grade_section_id || !account_id || !contact_no) {
+    throw new Error("Students ID, grade section ID, account ID, and contact no are required.");
   }
 
-  const [result] = await db.query(UPDATE_LIBRARY_STAFF_DUTIES, [staff_id, duty_date, time_in, time_out, remarks, id]);
+  const [result] = await db.query(UPDATE_STUDENTS, [
+    grade_section_id,
+    account_id,
+    lastname,
+    firstname,
+    middlename,
+    contact_no,
+    created_at,
+    updated_at,
+    id,
+  ]);
 
   return result;
 };
 
 // DELETE
-const deleteLibraryStaffDuty = async (library_staff_duty_id) => {
-  if (!library_staff_duty_id) {
-    throw new Error("Library Staff Duty ID is required.");
+const deleteStudents = async (Students_id) => {
+  if (!students_id) {
+    throw new Error("Students ID is required.");
   }
 
-  const [result] = await db.query(DELETE_LIBRARY_STAFF_DUTIES, [library_staff_duty_id]);
+  const [result] = await db.query(DELETE_STUDENTS, [students_id]);
 
   return result;
 };
 
 module.exports = {
-  createLibraryStaffDuty,
-  findAllLibraryStaffDuties,
-  findLibraryStaffDutyById,
-  updateLibraryStaffDuty,
-  deleteLibraryStaffDuty,
+  createStudents,
+  findAllStudents,
+  findStudentsById,
+  updateStudents,
+  deleteStudents,
 };
