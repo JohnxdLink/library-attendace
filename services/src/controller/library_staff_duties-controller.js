@@ -1,6 +1,6 @@
 const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 
-const libraryStaffDutiesService = require("../services/library-staff-duties-service.js");
+const libraryStaffDutiesService = require("../services/library_staff_duties-service.js");
 
 // CREATE
 const createLibraryStaffDuty = async (req, res) => {

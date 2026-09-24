@@ -11,3 +11,13 @@
 .btn-nav {
   color: var(--color-white);
 }
+
+.hero-section {
+  background-image:
+    linear-gradient(rgba(10, 20, 40, 0.75), rgba(10, 20, 40, 0.75)),
+    url("../../images/backgrounds/library-1-bg-sample.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

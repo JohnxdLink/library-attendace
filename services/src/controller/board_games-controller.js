@@ -1,6 +1,6 @@
 const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 
-const boardGamesService = require("../services/board-games-service.js");
+const boardGamesService = require("../services/board_games-service.js");
 
 // CREATE
 const createBoardGame = async (req, res) => {
