@@ -63,12 +63,12 @@ const updateLibraryComputerUsage = async (id, student_id, computer_id, usage_dat
 };
 
 // DELETE
-const deleteLibraryComputerUsage = async (library_computer_usage_id) => {
-  if (!library_computer_usage_id) {
+const deleteLibraryComputerUsage = async (id) => {
+  if (!id) {
     throw new Error("Library Computer Usage ID is required.");
   }
 
-  const [result] = await db.query(DELETE_LIBRARY_COMPUTER_USAGES, [library_computer_usage_id]);
+  const [result] = await db.query(DELETE_LIBRARY_COMPUTER_USAGES, [id]);
 
   return result;
 };

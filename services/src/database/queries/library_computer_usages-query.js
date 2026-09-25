@@ -1,7 +1,7 @@
 // CREATE
 const CREATE_LIBRARY_COMPUTER_USAGES = `
-  INSERT INTO attendance_reports (student_id, attendance_id, reported_by, report_type, description, status, report_date, action_taken)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  INSERT INTO library_computer_usages (student_id, computer_id, usage_date, time_in, time_out, purpose)
+  VALUES (?, ?, ?, ?, ?, ?)
 `;
 
 // READ - Get all records
@@ -45,9 +45,7 @@ const UPDATE_LIBRARY_COMPUTER_USAGES = `
     lcu.usage_date = ?,
     lcu.time_in = ?,
     lcu.time_out = ?,
-    lcu.purpose = ?,
-    lcu.created_at = ?,
-    lcu.updated_at = ?
+    lcu.purpose = ?
   WHERE lcu.id = ?
 `;
 

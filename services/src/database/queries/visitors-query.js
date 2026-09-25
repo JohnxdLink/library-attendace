@@ -1,7 +1,7 @@
 // CREATE
-const CREATE_LIBRARY_COMPUTER_USAGES = `
-  INSERT INTO attendance_reports (vistitor_name, visitor_type, contact_no, purpose, person_to_visit, time_in, time_out, visit_date, remarks, created_at, updated_at)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+const CREATE_VISITOR = `
+  INSERT INTO visitors (vistitor_name, visitor_type, contact_no, purpose, person_to_visit, time_in, time_out, visit_date, remarks)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 `;
 
 // READ - Get all records
@@ -24,7 +24,7 @@ const FIND_ALL_VISITORS = `
 `;
 
 // READ - Get record by ID
-const FIND_VISITORS_BY_ID = `
+const FIND_VISITOR_BY_ID = `
   SELECT
     v.id,
     v.visitor_name,
@@ -43,7 +43,7 @@ const FIND_VISITORS_BY_ID = `
 `;
 
 // UPDATE
-const UPDATE_VISITORS = `
+const UPDATE_VISITOR = `
   UPDATE attendance_reports AS ar
   SET
     v.visitor_name = ?,
@@ -54,22 +54,20 @@ const UPDATE_VISITORS = `
     v.time_in = ?,
     v.time_out = ?,
     v.visit_date = ?,
-    v.remarks = ?,
-    v.created_at = ?,
-    v.updated_at = ?
+    v.remarks = ?
   WHERE v.id = ?
 `;
 
 // DELETE
-const DELETE_VISITORS = `
+const DELETE_VISITOR = `
   DELETE FROM visitors
   WHERE id = ?
 `;
 
 module.exports = {
-  CREATE_VISITORS,
+  CREATE_VISITOR,
   FIND_ALL_VISITORS,
-  FIND_VISITORS_BY_ID,
-  UPDATE_VISITORS,
-  DELETE_VISITORS,
+  FIND_VISITOR_BY_ID,
+  UPDATE_VISITOR,
+  DELETE_VISITOR,
 };

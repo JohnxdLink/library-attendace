@@ -48,12 +48,12 @@ const updateLibraryStaffDuty = async (id, staff_id, duty_date, time_in, time_out
 };
 
 // DELETE
-const deleteLibraryStaffDuty = async (library_staff_duty_id) => {
-  if (!library_staff_duty_id) {
+const deleteLibraryStaffDuty = async (id) => {
+  if (!id) {
     throw new Error("Library Staff Duty ID is required.");
   }
 
-  const [result] = await db.query(DELETE_LIBRARY_STAFF_DUTIES, [library_staff_duty_id]);
+  const [result] = await db.query(DELETE_LIBRARY_STAFF_DUTIES, [id]);
 
   return result;
 };

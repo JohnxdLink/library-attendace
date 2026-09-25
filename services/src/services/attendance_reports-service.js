@@ -86,12 +86,12 @@ const updateAttendanceReport = async (
 };
 
 // DELETE
-const deleteAttendanceReport = async (attendance_report_id) => {
-  if (!attendance_report_id) {
+const deleteAttendanceReport = async (id) => {
+  if (!id) {
     throw new Error("Attendance Report ID is required.");
   }
 
-  const [result] = await db.query(DELETE_ATTENDANCE_REPORTS, [attendance_report_id]);
+  const [result] = await db.query(DELETE_ATTENDANCE_REPORTS, [id]);
 
   return result;
 };
