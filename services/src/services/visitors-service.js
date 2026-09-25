@@ -90,12 +90,12 @@ const updateVisitor = async (
 };
 
 // DELETE
-const deleteVisitor = async (visitor_id) => {
-  if (!visitor_id) {
+const deleteVisitor = async (id) => {
+  if (!id) {
     throw new Error("Visitor ID is required.");
   }
 
-  const [result] = await db.query(DELETE_VISITORS, [visitor_id]);
+  const [result] = await db.query(DELETE_VISITORS, [id]);
 
   return result;
 };

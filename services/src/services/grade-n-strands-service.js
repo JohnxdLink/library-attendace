@@ -60,12 +60,12 @@ const updateGradeNStrand = async (id, grade_level, strand, description) => {
 };
 
 // DELETE
-const deleteGradeNStrand = async (grade_n_strand_id) => {
-  if (!grade_n_strand_id) {
+const deleteGradeNStrand = async (id) => {
+  if (!id) {
     throw new Error("Grade N Strand ID is required.");
   }
 
-  const [result] = await db.query(DELETE_GRADE_N_STRAND, [grade_n_strand_id]);
+  const [result] = await db.query(DELETE_GRADE_N_STRAND, [id]);
 
   return result;
 };

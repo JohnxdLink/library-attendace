@@ -60,12 +60,12 @@ const updateAccount = async (id, username, password) => {
 };
 
 // DELETE
-const deleteAccount = async (account_id) => {
-  if (!account_id) {
+const deleteAccount = async (id) => {
+  if (!id) {
     throw new Error("Account ID is required.");
   }
 
-  const [result] = await db.query(DELETE_ACCOUNT, [account_id]);
+  const [result] = await db.query(DELETE_ACCOUNT, [id]);
 
   return result;
 };

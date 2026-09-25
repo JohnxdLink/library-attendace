@@ -9,7 +9,7 @@ const {
 
 // CREATE
 const createBoardGame = async (game_name, description, quantity, status) => {
-  if (!game_name || quantity === undefined || quantity === null) {
+  if (!game_name || quantity === 0) {
     throw new Error("Game name and quantity are required.");
   }
 
@@ -48,12 +48,12 @@ const updateBoardGame = async (id, game_name, description, quantity, status) => 
 };
 
 // DELETE
-const deleteBoardGame = async (board_game_id) => {
-  if (!board_game_id) {
+const deleteBoardGame = async (id) => {
+  if (!id) {
     throw new Error("Board Game ID is required.");
   }
 
-  const [result] = await db.query(DELETE_BOARD_GAME, [board_game_id]);
+  const [result] = await db.query(DELETE_BOARD_GAME, [id]);
 
   return result;
 };

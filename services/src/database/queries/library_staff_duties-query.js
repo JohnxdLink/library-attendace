@@ -1,7 +1,7 @@
 // CREATE
-const CREATE_LIBRARY_COMPUTER_USAGES = `
-  INSERT INTO attendance_reports (staff_id, duty_date, time_in, time_out, remarks, created_at, updated_at)
-  VALUES (?, ?, ?, ?, ?, ?, ?)
+const CREATE_LIBRARY_STAFF_DUTIES = `
+  INSERT INTO library_staff_duties (staff_id, duty_date, time_in, time_out, remarks)
+  VALUES (?, ?, ?, ?, ?)
 `;
 
 // READ - Get all records
@@ -42,9 +42,7 @@ const UPDATE_LIBRARY_STAFF_DUTIES = `
     lsd.duty_date = ?,
     lsd.time_in = ?,
     lsd.time_out = ?,
-    lsd.remarks = ?,
-    lsd.created_at = ?,
-    lsd.updated_at = ?
+    lsd.remarks = ?
   WHERE lsd.id = ?
 `;
 

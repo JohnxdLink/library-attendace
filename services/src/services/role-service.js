@@ -44,7 +44,7 @@ const findRoleByName = async (name) => {
   return result[0] || null;
 };
 
-const updateRole = async () => {
+const updateRole = async (id, name, description) => {
   if (!id || !name || !description) {
     throw new Error("All role fields are required.");
   }
@@ -54,7 +54,7 @@ const updateRole = async () => {
   return result;
 };
 
-const deleteRole = async () => {
+const deleteRole = async (id) => {
   if (!id) {
     throw new Error("Role ID is required.");
   }

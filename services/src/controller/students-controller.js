@@ -3,12 +3,12 @@ const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 const studentsService = require("../services/students-service.js");
 
 // CREATE
-const createStudents = async (req, res) => {
+const createStudent = async (req, res) => {
   try {
     const { grade_section_id, account_id, lastname, firstname, middlename, contact_no, created_at, updated_at } =
       req.body;
 
-    const result = await studentsService.createStudents(
+    const result = await studentsService.createStudent(
       grade_section_id,
       account_id,
       lastname,
@@ -55,7 +55,7 @@ const findAllStudents = async (req, res) => {
 };
 
 // READ - Get student by ID
-const findStudentsById = async (req, res) => {
+const findStudentById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -84,14 +84,14 @@ const findStudentsById = async (req, res) => {
 };
 
 // UPDATE
-const updateStudents = async (req, res) => {
+const updateStudent = async (req, res) => {
   try {
     const { id } = req.params;
 
     const { grade_section_id, account_id, lastname, firstname, middlename, contact_no, created_at, updated_at } =
       req.body;
 
-    const result = await studentsService.updateStudents(
+    const result = await studentsService.updateStudent(
       id,
       grade_section_id,
       account_id,
@@ -126,11 +126,11 @@ const updateStudents = async (req, res) => {
 };
 
 // DELETE
-const deleteStudents = async (req, res) => {
+const deleteStudent = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const result = await studentsService.deleteStudents(id);
+    const result = await studentsService.deleteStudent(id);
 
     if (result.affectedRows === 0) {
       return res.status(StatusCodes.NOT_FOUND).json({
@@ -155,9 +155,9 @@ const deleteStudents = async (req, res) => {
 };
 
 module.exports = {
-  createStudents,
+  createStudent,
   findAllStudents,
-  findStudentsById,
-  updateStudents,
-  deleteStudents,
+  findStudentById,
+  updateStudent,
+  deleteStudent,
 };

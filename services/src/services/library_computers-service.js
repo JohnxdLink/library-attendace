@@ -5,7 +5,7 @@ const {
   FIND_LIBRARY_COMPUTER_BY_ID,
   UPDATE_LIBRARY_COMPUTER,
   DELETE_LIBRARY_COMPUTER,
-} = require("../database/queries/library_computer-query.js");
+} = require("../database/queries/library_computers-query.js");
 
 // CREATE
 const createLibraryComputer = async (computer_number, status) => {
@@ -48,12 +48,12 @@ const updateLibraryComputer = async (id, computer_number, status) => {
 };
 
 // DELETE
-const deleteLibraryComputer = async (library_computer_id) => {
-  if (!library_computer_id) {
+const deleteLibraryComputer = async (id) => {
+  if (!id) {
     throw new Error("Library Computer ID is required.");
   }
 
-  const [result] = await db.query(DELETE_LIBRARY_COMPUTER, [library_computer_id]);
+  const [result] = await db.query(DELETE_LIBRARY_COMPUTER, [id]);
 
   return result;
 };
