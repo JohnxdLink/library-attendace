@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library | Students</title>
+
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/pages/students.css" />
   </head>
+
   <body class="w-screen h-screen d-flex flex-row bg-light">
+    <!-- SIDEBAR -->
     <aside class="pl-5 py-10 w-384">
       <div class="pr-5 h-100 d-flex flex-column border-light-gray border-r">
         <!-- Logo -->
@@ -54,9 +57,11 @@
             </a>
 
             <div id="schoolMenu" class="d-none flex-column">
-              <a class="ml-12 btn-tertiary btn-nav" href="#school-years">School Year</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="#grade-strands">Grade & Strand</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="#sections">Sections</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#school-years"> School Year </a>
+
+              <a class="ml-12 btn-tertiary btn-nav" href="#grade-strands"> Grade &amp; Strand </a>
+
+              <a class="ml-12 btn-tertiary btn-nav" href="#sections"> Sections </a>
             </div>
           </div>
 
@@ -72,9 +77,11 @@
             </a>
 
             <div id="libraryMenu" class="d-none flex-column">
-              <a class="ml-12 btn-tertiary btn-nav" href="#board-games">Board Games</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="#computers">Computers</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="#computer-usage">Computer Usage</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#board-games"> Board Games </a>
+
+              <a class="ml-12 btn-tertiary btn-nav" href="#computers"> Computers </a>
+
+              <a class="ml-12 btn-tertiary btn-nav" href="#computer-usage"> Computer Usage </a>
             </div>
           </div>
 
@@ -96,8 +103,9 @@
             </a>
 
             <div id="staffMenu" class="d-none flex-column">
-              <a class="ml-12 btn-tertiary btn-nav" href="#staff-list">Staff</a>
-              <a class="ml-12 btn-tertiary btn-nav" href="#staff-duties">Staff Duties</a>
+              <a class="ml-12 btn-tertiary btn-nav" href="#staff-list"> Staff </a>
+
+              <a class="ml-12 btn-tertiary btn-nav" href="#staff-duties"> Staff Duties </a>
             </div>
           </div>
 
@@ -118,234 +126,115 @@
       </div>
     </aside>
 
-        <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
     <div class="w-100 h-screen">
-
       <!-- HEADER -->
-      <header
-        class="px-10 pt-10 border-b border-light-gray header__h-18"
-      >
-
+      <header class="px-10 pt-10 border-b border-light-gray header__h-18">
         <div class="mb-2 d-flex gap-2">
+          <h1 class="text-lg" id="greeting"></h1>
 
-          <h1
-            class="text-lg"
-            id="greeting"
-          ></h1>
-
-          <h1 class="text-lg">
-            Juan dela Cruz
-          </h1>
-
+          <h1 class="text-lg">Juan dela Cruz</h1>
         </div>
+
         <div class="d-flex items-center justify-between">
-
           <div>
+            <p class="text-sm text-primary font-bold">STUDENTS</p>
 
-            <p class="text-sm text-primary font-bold">
-              STUDENTS
-            </p>
-
-            <h1 class="text-32 font-extrabold mt-2">
-              Registered Students
-            </h1>
-
+            <h1 class="text-32 font-extrabold mt-2">Registered Students</h1>
           </div>
 
           <!-- DATE -->
           <div class="bg-light border radius-md px-5 py-4">
+            <p class="text-xs text-gray font-bold">TODAY</p>
 
-            <p class="text-xs text-gray font-bold">
-              TODAY
-            </p>
-
-            <h1
-              id="todayDate"
-              class="mt-1 text-sm font-bold text-dark d-block"
-            >
-              Loading...
-            </h1>
-
+            <h1 id="todayDate" class="mt-1 text-sm font-bold text-dark d-block">Loading...</h1>
           </div>
-
         </div>
-
       </header>
 
-        <!-- STUDENTS CONTENT -->
+      <!-- STUDENTS CONTENT -->
       <main class="p-10 d-flex flex-column gap-5 main-container__h-77">
-
         <!-- PAGE HEADER -->
-        <section
-          class="d-flex items-center justify-between gap-5"
-        >
-
+        <section class="d-flex items-center justify-between gap-5">
           <!-- SEARCH -->
           <div class="w-320">
-            <input
-              type="text"
-              class="input"
-              id="studentSearch"
-              placeholder="Search student..."
-            />
+            <input type="text" class="input" id="studentSearch" placeholder="Search student..." />
           </div>
         </section>
 
         <!-- STUDENT TABLE -->
-        <section
-          class="bg-white rounded-xl border shadow-md overflow-hidden"
-        >
-
+        <section class="bg-white rounded-xl border shadow-md overflow-hidden">
           <!-- TABLE TITLE -->
-          <div
-            class="p-6 border-b d-flex items-center justify-between"
-          >
-
+          <div class="p-6 border-b d-flex items-center justify-between">
             <div>
+              <p class="text-xs text-primary font-bold">REGISTERED</p>
 
-              <p class="text-xs text-primary font-bold">
-                REGISTERED
-              </p>
-
-              <h2 class="text-lg font-bold mt-2">
-                Student Records
-              </h2>
-
+              <h2 class="text-lg font-bold mt-2">Student Records</h2>
             </div>
 
-            <p class="text-sm text-gray">
-              5 Students
-            </p>
-
+            <p class="text-sm text-gray">5 Students</p>
           </div>
 
           <!-- TABLE -->
           <div class="table-wrapper">
-
             <table class="table table-bordered">
-
               <thead>
-
                 <tr>
+                  <th class="text-center">ID NUMBER</th>
 
-                  <th class="text-center">
-                    ID NUMBER
-                  </th>
+                  <th class="text-center">NAME</th>
 
-                  <th class="text-center">
-                    NAME
-                  </th>
+                  <th class="text-center">SECTION</th>
 
-                  <th class="text-center">
-                    SECTION
-                  </th>
+                  <th class="text-center">DATE REGISTERED</th>
 
-                  <th class="text-center">
-                    DATE REGISTERED
-                  </th>
-
-                  <th class="text-center">
-                    ACTIONS
-                  </th>
-
+                  <th class="text-center">ACTIONS</th>
                 </tr>
-
               </thead>
 
-
               <tbody id="studentTableBody">
-
-                
                 <tr>
+                  <td class="text-center">—</td>
 
-                  <td class="text-center">
-                    —
-                  </td>
+                  <td class="font-semibold">—</td>
 
-                  <td class="font-semibold">
-                    —
-                  </td>
+                  <td class="text-center">—</td>
 
-                  <td class="text-center">
-                    —
-                  </td>
-
-                  <td class="text-center">
-                    —
-                  </td>
+                  <td class="text-center">—</td>
 
                   <td>
-
                     <div class="d-flex items-center justify-center gap-2">
-
-                      <button
-                        type="button"
-                        class="btn-outline"
-                        title="Edit Student"
-                      >
+                      <button type="button" class="btn-outline" title="Edit Student">
                         <span class="fa-solid fa-pen"></span>
                       </button>
 
-                      <button
-                        type="button"
-                        class="btn-danger"
-                        title="Delete Student"
-                      >
+                      <button type="button" class="btn-danger" title="Delete Student">
                         <span class="fa-solid fa-trash"></span>
                       </button>
-
                     </div>
                   </td>
                 </tr>
               </tbody>
-
             </table>
-
           </div>
 
           <!-- TABLE FOOTER -->
-          <div
-            class="p-5 bg-light border-t d-flex items-center justify-between"
-          >
+          <div class="p-5 bg-light border-t d-flex items-center justify-between">
+            <p class="text-xs text-gray">Showing 5 registered students</p>
 
-            <p class="text-xs text-gray">
-              Showing 5 registered students
-            </p>
-
-            <p class="text-xs text-gray">
-              Student Records
-            </p>
-
+            <p class="text-xs text-gray">Student Records</p>
           </div>
-
         </section>
-
       </main>
 
       <!-- FOOTER -->
-      <footer
-        class="pl-10 d-flex flex-row items-center footer__h-5"
-      >
-
-        <p class="text-xs text-gray">
-          2026 Library Attendance Monitoring System.
-          All rights reserved.
-        </p>
-
+      <footer class="pl-10 d-flex flex-row items-center footer__h-5">
+        <p class="text-xs text-gray">2026 Library Attendance Monitoring System. All rights reserved.</p>
       </footer>
-
     </div>
 
-    <script
-      type="module"
-      src="../assets/js/main.js"
-    ></script>
-
-    <script
-      type="module"
-      src="../assets/js/pages/students.js"
-    ></script>
-
-  <script type="module" src="../assets/js/main.js"></script>
-  <script type="module" src="../assets/js/pages/students.js"></script>
+    <!-- JAVASCRIPT -->
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/pages/students.js"></script>
+  </body>
 </html>
