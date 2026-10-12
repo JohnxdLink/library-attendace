@@ -170,9 +170,9 @@
             </div>
 
             <div class="d-flex items-center gap-3">
-              <span class="text-xs text-gray"> 0 Student </span>
+              <span id="attendanceCount" class="text-xs text-gray">0 Students</span>
 
-              <button type="button" class="btn-primary">
+              <button type="button" id="addAttendanceButton" class="btn-primary">
                 <span class="fa-solid fa-plus"></span>
                 Add Attendance
               </button>
@@ -185,34 +185,19 @@
               <thead>
                 <tr>
                   <th>ID NUMBER</th>
-
                   <th>NAME</th>
-
+                  <th>GRADE</th>
                   <th>SECTION</th>
-
                   <th>TIME IN</th>
-
                   <th>TIME OUT</th>
-
-                  <th class="text-center">STATUS</th>
+                  <th>STATUS</th>
+                  <th>ACTIONS</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody id="attendanceTableBody">
                 <tr>
-                  <td>—</td>
-
-                  <td class="font-semibold">—</td>
-
-                  <td>—</td>
-
-                  <td>—</td>
-
-                  <td>—</td>
-
-                  <td class="text-center">
-                    <span class="btn-success"> — </span>
-                  </td>
+                  <td colspan="6" class="text-center">No attendance records found.</td>
                 </tr>
               </tbody>
             </table>
@@ -223,17 +208,79 @@
             <p class="text-xs text-gray">Showing today's attendance records</p>
 
             <div class="d-flex items-center gap-2">
-              <span class="text-xs text-gray"> Present: </span>
-
-              <span class="text-xs font-bold"> 0 </span>
+              <span id="presentCount" class="text-xs font-bold">0</span>
 
               <span class="text-xs text-gray"> | </span>
 
-              <span class="text-xs text-gray"> Absent: </span>
-
-              <span class="text-xs font-bold"> 0 </span>
+              <span id="absentCount" class="text-xs font-bold">0</span>
             </div>
           </div>
+        </section>
+
+        <!-- ADD ATTENDANCE POP-OUT FORM -->
+        <section id="attendanceFormContainer" class="d-none bg-white border rounded-xl shadow-md p-6">
+          <div class="d-flex items-center justify-between mb-5">
+            <div>
+              <p class="text-xs text-primary font-bold">ATTENDANCE RECORD</p>
+              <h2 class="text-lg font-bold mt-2">Add Attendance</h2>
+              <p class="text-sm text-gray mt-2">Enter a registered student's ID number.</p>
+            </div>
+
+            <button type="button" id="cancelAttendanceButton" class="btn-outline">Cancel</button>
+          </div>
+
+          <form id="attendanceForm" class="d-flex flex-column gap-4">
+            <div>
+              <label for="attendanceStudentId" class="text-xs text-gray font-bold"> STUDENT ID NUMBER </label>
+              <input
+                type="text"
+                id="attendanceStudentId"
+                class="input mt-2"
+                placeholder="Enter student ID number"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="attendanceStudentName" class="text-xs text-gray font-bold"> STUDENT NAME </label>
+              <input
+                type="text"
+                id="attendanceStudentName"
+                class="input mt-2"
+                placeholder="Automatically filled"
+                readonly
+              />
+            </div>
+
+            <div>
+              <label for="attendanceStudentGrade" class="text-xs text-gray font-bold"> GRADE </label>
+              <input
+                type="text"
+                id="attendanceStudentGrade"
+                class="input mt-2"
+                placeholder="Automatically filled"
+                readonly
+              />
+            </div>
+
+            <div>
+              <label for="attendanceStudentSection" class="text-xs text-gray font-bold"> SECTION </label>
+              <input
+                type="text"
+                id="attendanceStudentSection"
+                class="input mt-2"
+                placeholder="Automatically filled"
+                readonly
+              />
+            </div>
+
+            <p id="attendanceFormMessage" class="text-sm text-gray"></p>
+
+            <button type="submit" class="btn-primary">
+              <span class="fa-solid fa-clipboard-check"></span>
+              Record Attendance
+            </button>
+          </form>
         </section>
       </main>
 
@@ -243,4 +290,5 @@
     </div>
   </body>
   <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/pages/attendance.js"></script>
 </html>

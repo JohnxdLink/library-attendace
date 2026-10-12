@@ -1,476 +1,384 @@
-// ==============================================
-// STUDENTS PAGE JAVASCRIPT
-// ==============================================
-
 const STORAGE_KEY = "libraryStudents";
 
-// ==============================================
-// GET HTML ELEMENTS
-// ==============================================
-
+// HTML elements
 const studentSearch = document.getElementById("studentSearch");
 const studentTableBody = document.getElementById("studentTableBody");
+const studentModal = document.getElementById("studentModal");
+const studentForm = document.getElementById("studentForm");
 
-// ==============================================
-// GET STUDENT COUNT ELEMENTS
-// ==============================================
+const addStudentButton = document.getElementById("addStudentButton");
+const closeStudentModal = document.getElementById("closeStudentModal");
+const cancelStudentButton = document.getElementById("cancelStudentButton");
+
+const studentNumberInput = document.getElementById("studentNumber");
+const studentLastnameInput = document.getElementById("studentLastname");
+const studentFirstnameInput = document.getElementById("studentFirstname");
+const studentGradeInput = document.getElementById("studentGrade");
+const studentSchoolYearInput = document.getElementById("studentSchoolYear");
+const studentSectionInput = document.getElementById("studentSection");
 
 const studentCount = document.querySelector(".bg-white .text-sm.text-gray");
 
 const tableFooterText = document.querySelector(".bg-light.border-t .text-xs.text-gray");
 
-// ==============================================
-// GET STUDENTS FROM LOCAL STORAGE
-// ==============================================
+let editingStudentId = null;
 
+// Load registered students.
 function getStudents() {
-  const students = localStorage.getItem(STORAGE_KEY);
-
-  if (!students) {
-    return [];
-  }
-
   try {
-    return JSON.parse(students);
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    return Array.isArray(data) ? data : [];
   } catch (error) {
-    console.error("Unable to load students:", error);
-
+    console.error("Unable to load student records:", error);
     return [];
   }
 }
 
-// ==============================================
-// SAVE STUDENTS TO LOCAL STORAGE
-// ==============================================
-
+// Save registered students.
 function saveStudents(students) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
+    return true;
+  } catch (error) {
+    console.error("Unable to save student records:", error);
+    alert("Unable to save student records. Please check browser storage.");
+    return false;
+  }
 }
 
-// ==============================================
-// GENERATE STUDENT ID
-// ==============================================
-
+// Generate an internal record ID.
 function generateStudentId() {
-  return Date.now().toString();
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
-// ==============================================
-// ESCAPE HTML
-// Prevents unwanted HTML from being inserted
-// into the table.
-// ==============================================
-
-function escapeHTML(text) {
-  const div = document.createElement("div");
-
-  div.textContent = text;
-
-  return div.innerHTML;
+// Get a student's full name, including compatibility with older records.
+function getFullName(student) {
+  return (student.name || [student.firstname, student.middlename, student.lastname].filter(Boolean).join(" ")).trim();
 }
 
-// ==============================================
-// FORMAT DATE
-// ==============================================
-
+// Format registration date.
 function formatDate(date) {
-  const formattedDate = new Date(date);
+  if (!date) return "—";
 
-  return formattedDate.toLocaleDateString("en-US", {
+  const parsedDate = new Date(date);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return "—";
+  }
+
+  return parsedDate.toLocaleDateString("en-PH", {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
 }
 
-// ==============================================
-// DISPLAY STUDENTS
-// ==============================================
+// Update the student count.
+function updateStudentCount(count) {
+  if (studentCount) {
+    studentCount.textContent = `${count} ${count === 1 ? "Student" : "Students"}`;
+  }
 
-function displayStudents(students = getStudents()) {
-  studentTableBody.innerHTML = "";
+  if (tableFooterText) {
+    tableFooterText.textContent = `Showing ${count} registered ${count === 1 ? "student" : "students"}`;
+  }
+}
 
-  // ============================================
-  // NO STUDENTS
-  // ============================================
+// Render the student table.
+function displayStudents(studentList = getStudents()) {
+  studentTableBody.replaceChildren();
 
-  if (students.length === 0) {
+  if (studentList.length === 0) {
     const row = document.createElement("tr");
+    const cell = document.createElement("td");
 
-    row.innerHTML = `
-      <td colspan="5" class="text-center">
-        <div class="p-6">
-          <p class="text-xs text-gray">
-            No student records found.
-          </p>
-        </div>
-      </td>
-    `;
+    cell.colSpan = 5;
+    cell.className = "text-center";
+    cell.textContent = "No student records found.";
 
+    row.appendChild(cell);
     studentTableBody.appendChild(row);
 
     updateStudentCount(0);
-
     return;
   }
 
-  // ============================================
-  // DISPLAY EACH STUDENT
-  // ============================================
-
-  students.forEach(function (student) {
+  studentList.forEach((student) => {
     const row = document.createElement("tr");
 
-    row.dataset.studentId = student.id;
+    const idCell = document.createElement("td");
+    idCell.className = "text-center";
+    idCell.textContent = student.studentNumber || "—";
 
-    row.innerHTML = `
-      <td class="text-center">
-        ${escapeHTML(student.studentNumber)}
-      </td>
+    const nameCell = document.createElement("td");
+    nameCell.className = "font-semibold";
+    nameCell.textContent = getFullName(student) || "—";
 
-      <td class="font-semibold">
-        ${escapeHTML(student.name)}
-      </td>
+    const sectionCell = document.createElement("td");
+    sectionCell.className = "text-center";
+    sectionCell.textContent = student.section || "—";
 
-      <td class="text-center">
-        ${escapeHTML(student.section)}
-      </td>
+    const dateCell = document.createElement("td");
+    dateCell.className = "text-center";
+    dateCell.textContent = formatDate(student.dateRegistered);
 
-      <td class="text-center">
-        ${escapeHTML(formatDate(student.dateRegistered))}
-      </td>
+    // Action buttons.
+    const actionsCell = document.createElement("td");
+    const actionsContainer = document.createElement("div");
 
-      <td>
-        <div class="d-flex items-center justify-center gap-2">
+    actionsContainer.className = "d-flex items-center justify-center gap-2";
 
-          <button
-            type="button"
-            class="btn-outline edit-student"
-            title="Edit Student"
-            data-id="${escapeHTML(student.id)}"
-          >
-            <span class="fa-solid fa-pen"></span>
-          </button>
+    const editButton = document.createElement("button");
+    editButton.type = "button";
+    editButton.className = "btn-outline";
+    editButton.title = "Edit Student";
+    editButton.setAttribute("aria-label", "Edit Student");
+    editButton.innerHTML = '<span class="fa-solid fa-pen"></span>';
 
-          <button
-            type="button"
-            class="btn-danger delete-student"
-            title="Delete Student"
-            data-id="${escapeHTML(student.id)}"
-          >
-            <span class="fa-solid fa-trash"></span>
-          </button>
+    editButton.addEventListener("click", () => {
+      editStudent(student.id);
+    });
 
-        </div>
-      </td>
-    `;
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "btn-danger";
+    deleteButton.title = "Delete Student";
+    deleteButton.setAttribute("aria-label", "Delete Student");
+    deleteButton.innerHTML = '<span class="fa-solid fa-trash"></span>';
+
+    deleteButton.addEventListener("click", () => {
+      deleteStudent(student.id);
+    });
+
+    actionsContainer.append(editButton, deleteButton);
+    actionsCell.appendChild(actionsContainer);
+
+    row.append(idCell, nameCell, sectionCell, dateCell, actionsCell);
 
     studentTableBody.appendChild(row);
   });
 
-  updateStudentCount(students.length);
+  updateStudentCount(studentList.length);
 }
 
-// ==============================================
-// UPDATE STUDENT COUNT
-// ==============================================
-
-function updateStudentCount(count) {
-  if (studentCount) {
-    studentCount.textContent = `${count} Student${count === 1 ? "" : "s"}`;
-  }
-
-  if (tableFooterText) {
-    tableFooterText.textContent = `Showing ${count} registered student${count === 1 ? "" : "s"}`;
-  }
-}
-
-// ==============================================
-// SEARCH STUDENTS
-// ==============================================
-
+// Search by ID, name, grade, section, or school year.
 function searchStudents() {
-  const searchValue = studentSearch.value.trim().toLowerCase();
-
+  const query = studentSearch.value.trim().toLowerCase();
   const students = getStudents();
 
-  if (!searchValue) {
+  if (!query) {
     displayStudents(students);
-
     return;
   }
 
-  const filteredStudents = students.filter(function (student) {
-    return (
-      student.studentNumber.toLowerCase().includes(searchValue) ||
-      student.name.toLowerCase().includes(searchValue) ||
-      student.section.toLowerCase().includes(searchValue)
+  const filteredStudents = students.filter((student) => {
+    const searchableValues = [
+      student.studentNumber,
+      getFullName(student),
+      student.grade,
+      student.section,
+      student.schoolYear,
+    ];
+
+    return searchableValues.some((value) =>
+      String(value ?? "")
+        .toLowerCase()
+        .includes(query),
     );
   });
 
   displayStudents(filteredStudents);
 }
 
-// ==============================================
-// ADD STUDENT
-// ==============================================
+// Open a blank form for adding a student.
+function openAddStudentForm() {
+  editingStudentId = null;
+  studentForm.reset();
 
-function addStudent() {
-  const studentNumber = prompt("Enter student ID number:");
+  studentModal.classList.remove("d-none");
 
-  if (!studentNumber) {
-    return;
-  }
+  const title = studentModal.querySelector("h2");
+  const description = studentModal.querySelector("h2 + p");
+  const submitButton = studentForm.querySelector('button[type="submit"]');
 
-  const name = prompt("Enter student's full name:");
+  if (title) title.textContent = "Add Student";
+  if (description) description.textContent = "Register a new student.";
+  if (submitButton) submitButton.textContent = "Add Student";
 
-  if (!name) {
-    return;
-  }
-
-  const section = prompt("Enter student's section:");
-
-  if (!section) {
-    return;
-  }
-
-  const students = getStudents();
-
-  // ============================================
-  // CHECK DUPLICATE STUDENT ID
-  // ============================================
-
-  const existingStudent = students.some(function (student) {
-    return student.studentNumber.toLowerCase() === studentNumber.trim().toLowerCase();
-  });
-
-  if (existingStudent) {
-    alert("A student with that ID number already exists.");
-
-    return;
-  }
-
-  // ============================================
-  // CREATE STUDENT
-  // ============================================
-
-  const newStudent = {
-    id: generateStudentId(),
-
-    studentNumber: studentNumber.trim(),
-
-    name: name.trim(),
-
-    section: section.trim(),
-
-    dateRegistered: new Date().toISOString(),
-  };
-
-  // ============================================
-  // SAVE STUDENT
-  // ============================================
-
-  students.push(newStudent);
-
-  saveStudents(students);
-
-  displayStudents();
-
-  alert("Student added successfully.");
+  studentNumberInput.disabled = false;
+  studentNumberInput.focus();
 }
 
-// ==============================================
-// EDIT STUDENT
-// ==============================================
+// Close and reset the form.
+function closeStudentForm() {
+  studentModal.classList.add("d-none");
+  studentForm.reset();
 
-function editStudent(studentId) {
+  editingStudentId = null;
+  studentNumberInput.disabled = false;
+}
+
+// Add or update a student.
+function saveStudentForm(event) {
+  event.preventDefault();
+
+  const wasEditing = Boolean(editingStudentId);
+
+  const studentNumber = studentNumberInput.value.trim();
+  const lastname = studentLastnameInput.value.trim();
+  const firstname = studentFirstnameInput.value.trim();
+  const grade = studentGradeInput.value;
+  const schoolYear = studentSchoolYearInput.value;
+  const section = studentSectionInput.value;
+
+  // Validate all required fields.
+  if (!studentNumber || !lastname || !firstname || !grade || !schoolYear || !section) {
+    alert("Please complete all required fields.");
+    return;
+  }
+
   const students = getStudents();
 
-  const student = students.find(function (item) {
-    return item.id === studentId;
-  });
+  // Prevent duplicate student ID numbers.
+  const duplicate = students.some(
+    (student) =>
+      String(student.studentNumber ?? "")
+        .trim()
+        .toLowerCase() === studentNumber.toLowerCase() && student.id !== editingStudentId,
+  );
+
+  if (duplicate) {
+    alert("This student ID number is already registered.");
+    studentNumberInput.focus();
+    return;
+  }
+
+  const name = `${firstname} ${lastname}`.trim();
+
+  if (wasEditing) {
+    const student = students.find((item) => item.id === editingStudentId);
+
+    if (!student) {
+      alert("Student record could not be found.");
+      closeStudentForm();
+      displayStudents();
+      return;
+    }
+
+    // Update the existing record without changing its registration date.
+    student.studentNumber = studentNumber;
+    student.firstname = firstname;
+    student.lastname = lastname;
+    student.name = name;
+    student.grade = grade;
+    student.section = section;
+    student.schoolYear = schoolYear;
+  } else {
+    students.push({
+      id: generateStudentId(),
+      studentNumber,
+      firstname,
+      lastname,
+      name,
+      grade,
+      section,
+      schoolYear,
+      dateRegistered: new Date().toISOString(),
+    });
+  }
+
+  if (!saveStudents(students)) return;
+
+  closeStudentForm();
+  searchStudents();
+
+  alert(wasEditing ? "Student information updated successfully." : "Student registered successfully.");
+}
+
+// Open the form with existing student information.
+function editStudent(studentId) {
+  const student = getStudents().find((item) => item.id === studentId);
 
   if (!student) {
     alert("Student record could not be found.");
-
     return;
   }
 
-  // ============================================
-  // GET UPDATED INFORMATION
-  // ============================================
+  editingStudentId = student.id;
 
-  const studentNumber = prompt("Edit student ID number:", student.studentNumber);
+  studentNumberInput.value = student.studentNumber || "";
+  studentLastnameInput.value = student.lastname || getFullName(student).split(" ").slice(1).join(" ");
 
-  if (!studentNumber) {
-    return;
+  studentFirstnameInput.value = student.firstname || getFullName(student).split(" ")[0] || "";
+
+  studentGradeInput.value = student.grade || "";
+  studentSchoolYearInput.value = student.schoolYear || "";
+  studentSectionInput.value = student.section || "";
+
+  studentModal.classList.remove("d-none");
+
+  const title = studentModal.querySelector("h2");
+  const description = studentModal.querySelector("h2 + p");
+  const submitButton = studentForm.querySelector('button[type="submit"]');
+
+  if (title) title.textContent = "Edit Student";
+  if (description) {
+    description.textContent = "Update the student's information.";
   }
+  if (submitButton) submitButton.textContent = "Save Changes";
 
-  const name = prompt("Edit student's full name:", student.name);
-
-  if (!name) {
-    return;
-  }
-
-  const section = prompt("Edit student's section:", student.section);
-
-  if (!section) {
-    return;
-  }
-
-  // ============================================
-  // CHECK DUPLICATE ID
-  // ============================================
-
-  const duplicateStudent = students.some(function (item) {
-    return item.id !== studentId && item.studentNumber.toLowerCase() === studentNumber.trim().toLowerCase();
-  });
-
-  if (duplicateStudent) {
-    alert("Another student already has that ID number.");
-
-    return;
-  }
-
-  // ============================================
-  // UPDATE STUDENT
-  // ============================================
-
-  student.studentNumber = studentNumber.trim();
-
-  student.name = name.trim();
-
-  student.section = section.trim();
-
-  // ============================================
-  // SAVE CHANGES
-  // ============================================
-
-  saveStudents(students);
-
-  displayStudents();
-
-  alert("Student information updated successfully.");
+  studentNumberInput.disabled = false;
 }
 
-// ==============================================
-// DELETE STUDENT
-// ==============================================
-
+// Delete a student after a warning.
 function deleteStudent(studentId) {
   const students = getStudents();
 
-  const student = students.find(function (item) {
-    return item.id === studentId;
-  });
+  const student = students.find((item) => item.id === studentId);
 
   if (!student) {
-    alert("Student record could not be found.");
-
+    alert("Student record could not be found. Please refresh the page.");
     return;
   }
 
-  // ============================================
-  // CONFIRM DELETE
-  // ============================================
+  const confirmed = window.confirm(
+    "WARNING: You are about to delete a student record.\n\n" +
+      `Student Name: ${getFullName(student)}\n` +
+      `Student ID: ${student.studentNumber || "Not provided"}\n` +
+      `Grade: ${student.grade || "Not provided"}\n` +
+      `Section: ${student.section || "Not provided"}\n` +
+      `School Year: ${student.schoolYear || "Not provided"}\n\n` +
+      "This action cannot be undone.\n\n" +
+      "The student's existing attendance records will not be deleted " +
+      "automatically, but this student will no longer be available " +
+      "for new attendance lookups.\n\n" +
+      "Are you sure you want to continue?",
+  );
 
-  const confirmed = confirm(`Delete ${student.name} from the student records?`);
+  if (!confirmed) return;
 
-  if (!confirmed) {
-    return;
+  const updatedStudents = students.filter((item) => item.id !== studentId);
+
+  if (!saveStudents(updatedStudents)) return;
+
+  searchStudents();
+
+  alert(`Student "${getFullName(student)}" has been deleted successfully.`);
+}
+
+// Event listeners.
+addStudentButton.addEventListener("click", openAddStudentForm);
+closeStudentModal.addEventListener("click", closeStudentForm);
+cancelStudentButton.addEventListener("click", closeStudentForm);
+studentForm.addEventListener("submit", saveStudentForm);
+studentSearch.addEventListener("input", searchStudents);
+
+// Close the form when clicking outside the form panel.
+studentModal.addEventListener("click", (event) => {
+  if (event.target === studentModal) {
+    closeStudentForm();
   }
+});
 
-  // ============================================
-  // REMOVE STUDENT
-  // ============================================
-
-  const updatedStudents = students.filter(function (item) {
-    return item.id !== studentId;
-  });
-
-  // ============================================
-  // SAVE UPDATED LIST
-  // ============================================
-
-  saveStudents(updatedStudents);
-
-  displayStudents();
-
-  alert("Student record deleted successfully.");
-}
-
-// ==============================================
-// TABLE BUTTON EVENTS
-// ==============================================
-
-if (studentTableBody) {
-  studentTableBody.addEventListener("click", function (event) {
-    // ========================================
-    // EDIT BUTTON
-    // ========================================
-
-    const editButton = event.target.closest(".edit-student");
-
-    if (editButton) {
-      const studentId = editButton.dataset.id;
-
-      editStudent(studentId);
-
-      return;
-    }
-
-    // ========================================
-    // DELETE BUTTON
-    // ========================================
-
-    const deleteButton = event.target.closest(".delete-student");
-
-    if (deleteButton) {
-      const studentId = deleteButton.dataset.id;
-
-      deleteStudent(studentId);
-
-      return;
-    }
-  });
-}
-
-// ==============================================
-// SEARCH EVENT
-// ==============================================
-
-if (studentSearch) {
-  studentSearch.addEventListener("input", searchStudents);
-}
-
-// ==============================================
-// ADD STUDENT BUTTON
-// ==============================================
-
-// Your current students.html does not have
-// an Add Student button.
-//
-// This creates one using the existing button
-// classes from your project.
-
-const searchSection = studentSearch?.closest("section");
-
-if (searchSection) {
-  const addStudentButton = document.createElement("button");
-
-  addStudentButton.type = "button";
-
-  addStudentButton.className = "btn-primary";
-
-  addStudentButton.textContent = "+ Add Student";
-
-  addStudentButton.addEventListener("click", addStudent);
-
-  searchSection.appendChild(addStudentButton);
-}
-
-// ==============================================
-// INITIALIZE STUDENTS PAGE
-// ==============================================
-
+// Initial page setup.
 displayStudents();
