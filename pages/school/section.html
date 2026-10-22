@@ -140,6 +140,131 @@
           </div>
         </div>
       </header>
+
+      <!-- SECTIONS CONTENT -->
+      <main class="p-10 d-flex flex-column gap-5 main-container__h-77">
+        <!-- PAGE HEADER -->
+        <section class="d-flex items-center justify-between gap-5">
+          <div class="w-320">
+            <input type="text" class="input" id="studentSearch" placeholder="Search section..." />
+          </div>
+
+          <button type="button" id="addSectionButton" class="btn-primary">
+            <span class="fa-solid fa-plus"></span>
+            Add Section
+          </button>
+        </section>
+
+        <!-- TABLE -->
+        <div class="table-wrapper">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="text-center">SECTION CODE</th>
+
+                <th class="text-center">STRAND</th>
+
+                <th class="text-center">GRADE LEVEL</th>
+
+                <th class="text-center">ADVISER</th>
+
+                <th class="text-center">ACTIONS</th>
+              </tr>
+            </thead>
+
+            <tbody id="sectionTableBody">
+              <tr>
+                <td class="text-center">—</td>
+
+                <td class="font-semibold">—</td>
+
+                <td class="text-center">—</td>
+
+                <td class="text-center">—</td>
+
+                <td>
+                  <div class="d-flex items-center justify-center gap-2">
+                    <button type="button" class="btn-outline" title="Edit Section">
+                      <span class="fa-solid fa-pen"></span>
+                    </button>
+
+                    <button type="button" class="btn-danger" title="Delete Section">
+                      <span class="fa-solid fa-trash"></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TABLE FOOTER -->
+        <div class="p-5 bg-light border-t d-flex items-center justify-between">
+          <p class="text-xs text-gray">Showing 0 registered section</p>
+
+          <p class="text-xs text-gray">Section Records</p>
+        </div>
+
+        <!-- ADD SECTION MODAL -->
+        <div id="sectionModal" class="d-none position-fixed top-0 left-0 w-100 h-100 bg-light">
+          <div class="w-100 h-100 d-flex items-center justify-center p-10">
+            <div class="bg-white border rounded-xl shadow-md p-6 w-384">
+              <!-- FORM HEADER -->
+              <div class="d-flex items-center justify-between mb-5">
+                <div>
+                  <p class="text-xs text-primary font-bold">SECTION MANAGEMENT</p>
+
+                  <h2 class="text-xl font-bold mt-2">Add Setcion</h2>
+
+                  <p class="text-xs text-gray mt-2">Register a new section.</p>
+                </div>
+
+                <button type="button" id="closeSectionModal" class="btn-outline">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form>
+          <section>
+            <h2>Grade Section Form</h2>
+
+            <div>
+              <label for="school_year">School Year:</label>
+              <input type="text" id="school_year" name="school_year" placeholder="e.g., 2026-2027" required />
+            </div>
+
+            <div>
+              <label for="grade_strand">Grade and Strand:</label>
+              <input type="text" id="grade_strand" name="grade_strand" placeholder="e.g., Grade 11 - STEM" required />
+            </div>
+
+            <div>
+              <label for="staff">Staff:</label>
+              <input type="text" id="staff" name="staff" placeholder="Enter staff name" required />
+            </div>
+
+            <div>
+              <label for="section_name">Section Name:</label>
+              <input type="text" id="section_name" name="section_name" placeholder="Enter section name" required />
+            </div>
+
+            <div>
+              <label for="description">Description:</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                placeholder="Enter section description..."
+              ></textarea>
+            </div>
+
+            <div>
+              <button type="submit">Submit Section</button>
+            </div>
+          </section>
+        </form>
+      </main>
     </div>
   </body>
 
