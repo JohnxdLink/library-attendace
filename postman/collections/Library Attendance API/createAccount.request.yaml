@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{BASE_URL}}/accounts"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"username\": \"superadmin\",\r
+
+    \    \"password\": \"superadmin\"\r
+
+    }"
+order: 1268459791772679

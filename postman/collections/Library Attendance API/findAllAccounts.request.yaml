@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{BASE_URL}}/accounts"
+method: GET
+auth:
+  type: inherit
+  credentials:
+    id: 198e58aa-6326-4d07-8b4d-2f78126ff5c1
+order: 1268459791769679

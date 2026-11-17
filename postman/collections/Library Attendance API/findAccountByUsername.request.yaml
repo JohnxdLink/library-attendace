@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{BASE_URL}}/accounts/?admin"
+method: GET
+queryParams:
+  admin: null
+order: 1268459791771679

@@ -101,7 +101,7 @@ const updateAccount = async (req, res) => {
 
     const result = await accountsService.updateAccount(id, username, password);
 
-    return res.status(StatusCodes.Ok).json({
+    return res.status(StatusCodes.OK).json({
       success: true,
       message: "Account updated successfully.",
       data: result,
