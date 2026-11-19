@@ -12,6 +12,6 @@ router.get("/:id", gradeNStrandsController.findGradeNStrandById);
 router.get("/", gradeNStrandsController.findGradeNStrand);
 router.post("/", gradeNStrandsController.createGradeNStrand);
 router.put("/:id", gradeNStrandsController.updateGradeNStrand);
-router.delete("/:grade_n_strand_id", gradeNStrandsController.deleteGradeNStrand);
+router.delete("/grade_n_strand/:grade_n_strand_id", gradeNStrandsController.deleteGradeNStrand);
 
 module.export = router;

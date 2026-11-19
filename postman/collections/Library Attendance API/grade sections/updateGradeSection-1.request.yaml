@@ -1,0 +1,5 @@
+$kind: http-request
+name: updateGradeSection
+url: "{{BASE_URL}}/grade-sections"
+method: POST
+order: 7000

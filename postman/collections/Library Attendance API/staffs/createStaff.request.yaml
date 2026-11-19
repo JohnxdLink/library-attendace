@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/staffs"
+method: POST
+order: 5000

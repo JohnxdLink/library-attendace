@@ -1,13 +1,13 @@
 $kind: http-request
-url: "{{BASE_URL}}/accounts"
+url: "{{BASE_URL}}/accounts/2"
 method: PUT
 body:
   type: json
   content: "{\r
 
-    \    \"username\": \"superadmin\",\r
+    \    \"username\": \"templa\",\r
 
     \    \"password\": \"superadmin\"\r
 
     }"
-order: 1268459791773679
+order: 5000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/grade-n-strands"
+method: GET
+order: 2000

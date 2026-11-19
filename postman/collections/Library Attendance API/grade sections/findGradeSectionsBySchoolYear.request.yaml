@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/grade-sections/school_year"
+method: GET
+order: 6000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/library-computer-usages"
+method: PUT
+order: 4000

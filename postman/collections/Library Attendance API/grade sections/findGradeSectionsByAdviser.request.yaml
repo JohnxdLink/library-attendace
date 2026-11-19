@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/grade-sections/adviser_staff"
+method: GET
+order: 4000

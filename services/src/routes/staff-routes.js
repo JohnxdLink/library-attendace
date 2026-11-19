@@ -9,8 +9,8 @@ router.use(authenticate);
 
 router.get("/", staffController.findAllStaffs);
 router.get("/:id", staffController.findStaffById);
-router.get("/:account_id", staffController.findStaffByAccountId);
-router.get("/:email", staffController.findStaffByEmail);
+router.get("/account/:account_id", staffController.findStaffByAccountId);
+router.get("/email/:email", staffController.findStaffByEmail);
 router.post("/", staffController.createStaff);
 router.put("/:id", staffController.updateStaff);
 router.delete("/:id", staffController.deleteStaff);

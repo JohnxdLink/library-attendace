@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/visitors"
+method: PUT
+order: 4000

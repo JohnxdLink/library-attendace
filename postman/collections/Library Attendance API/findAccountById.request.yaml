@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{BASE_URL}}/accounts/1"
-method: GET
-order: 1268459791770679

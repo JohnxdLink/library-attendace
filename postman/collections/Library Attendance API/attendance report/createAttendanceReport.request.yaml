@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/attendance-reports"
+method: POST
+order: 3000

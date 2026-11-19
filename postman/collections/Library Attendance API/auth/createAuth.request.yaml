@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/auth/sign-in"
+method: POST
+order: 1000

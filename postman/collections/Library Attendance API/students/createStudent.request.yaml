@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/students"
+method: POST
+order: 3000

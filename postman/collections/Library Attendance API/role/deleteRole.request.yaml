@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/roles"
+method: DELETE
+order: 6000

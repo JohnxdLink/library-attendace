@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/library-computers"
+method: POST
+order: 3000

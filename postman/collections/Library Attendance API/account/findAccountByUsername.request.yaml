@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{BASE_URL}}/accounts/username/superadmin"
+method: GET
+body:
+  type: json
+  content: ""
+order: 3000

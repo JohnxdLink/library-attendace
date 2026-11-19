@@ -3,9 +3,12 @@ variables:
   - key: json_web_token_06c2
     secret: true
     disabled: false
+  - key: json_web_token_1c5p
+    secret: true
+    disabled: false
 auth:
   - id: 198e58aa-6326-4d07-8b4d-2f78126ff5c1
     type: bearer
     name: Bearer Token
     credentials:
-      token: "{{json_web_token_06c2}}"
+      token: "{{json_web_token_1c5p}}"

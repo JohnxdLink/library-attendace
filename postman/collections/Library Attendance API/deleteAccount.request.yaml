@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{BASE_URL}}/accounts"
-method: DELETE
-order: 1268459791774679

@@ -7,6 +7,7 @@ const router = Router();
 
 router.use(authenticate);
 
+// ✅ LGTM
 router.get("/", attendanceReportsController.findAllAttendanceReports);
 router.get("/:id", attendanceReportsController.findAttendanceReportById);
 router.post("/", attendanceReportsController.createAttendanceReport);

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/grade-sections"
+method: PUT
+order: 8000

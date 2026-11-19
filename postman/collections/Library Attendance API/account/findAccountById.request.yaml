@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{BASE_URL}}/accounts/2"
+method: GET
+body:
+  type: json
+  content: ""
+order: 2000

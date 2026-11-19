@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/staffs/email"
+method: GET
+order: 4000

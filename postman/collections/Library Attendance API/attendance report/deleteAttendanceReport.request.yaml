@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/attendance-reports"
+method: DELETE
+order: 5000

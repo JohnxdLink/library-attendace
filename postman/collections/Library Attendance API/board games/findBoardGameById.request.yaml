@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/board-games"
+method: GET
+order: 2000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/grade-n-strands/grade-n-strand"
+method: DELETE
+order: 6000

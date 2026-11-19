@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/library-staff-duties"
+method: GET
+order: 2000

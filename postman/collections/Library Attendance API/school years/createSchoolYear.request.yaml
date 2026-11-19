@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/school-years"
+method: POST
+order: 4000

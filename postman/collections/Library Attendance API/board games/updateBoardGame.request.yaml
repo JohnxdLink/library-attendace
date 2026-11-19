@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{BASE_URL}}/board-games"
+method: PUT
+order: 4000
